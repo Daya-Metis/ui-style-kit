@@ -1,0 +1,16 @@
+<button
+  [ngClass]="[type, variant]"
+  [disabled]="disabled"
+>
+  <!-- Icon only -->
+  <span *ngIf="variant === 'icon'">{{ icon }}</span>
+
+  <!-- Icon + Label -->
+  <ng-container *ngIf="variant === 'icon-label'">
+    <span class="icon">{{ icon }}</span>
+    <span class="label">{{ label }}</span>
+  </ng-container>
+
+  <!-- Label only -->
+  <span *ngIf="variant === 'default'">{{ label }}</span>
+</button>

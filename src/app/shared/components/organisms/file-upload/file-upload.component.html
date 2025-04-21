@@ -1,0 +1,44 @@
+<button
+  type="button"
+  class="upload-box"
+  (click)="onBoxClick()"
+  (drop)="onDrop($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave()"
+>
+  <ng-container *ngIf="!uploadedFiles.length; else fileList">
+    <p>Drop your file{{ multiple ? 's' : '' }} here or <strong>click to upload</strong></p>
+  </ng-container>
+
+  <ng-template #fileList>
+    <div class="file-details" *ngFor="let file of uploadedFiles; let i = index">
+      <div>
+        <strong>{{ file.name }}</strong>
+        <span>{{ (file.size / 1024).toFixed(1) }} KB</span>
+      </div>
+      <app-button
+  variant="icon"
+  icon="🗑"
+  type="primary"
+  (click)="clearFile(i)"
+  title="Remove file"
+></app-button>
+
+    </div>
+  </ng-template>
+  
+<div class="info-text" *ngIf="label">
+  {{ label }}
+</div>
+<span *ngIf="multiple && uploadedFiles.length">
+  Total uploaded: {{ (getTotalSize() / 1024 / 1024).toFixed(2) }} MB
+</span>
+
+<input
+  #fileInput
+  [multiple]="multiple"
+  type="file"
+  style="display: none"
+  (change)="onFileChange($event)"
+/>
+

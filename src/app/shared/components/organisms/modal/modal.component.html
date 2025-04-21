@@ -1,0 +1,19 @@
+<div class="modal-backdrop" *ngIf="show" (click)="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-body">
+        <ng-content select="[modal-body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <app-button
+          label="Cancel"
+          type="secondary"
+          (click)="onClose()"
+        ></app-button>
+        <app-button
+          label="Save"
+          type="primary"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,71 @@
+<h2>Atoms</h2>
+
+<section>
+  <h3>Button</h3>
+  <app-button label="Primary" type="primary"></app-button>
+  <app-button label="Secondary" type="secondary"></app-button>
+  <app-button icon="🗑" variant="icon"></app-button>
+  <app-button icon="✅" label="Save" variant="icon-label" type="primary"></app-button>
+</section>
+
+<section>
+  <app-playground
+    title="🎮 Try it Yourself: Button Playground"
+    [code]="buttonMarkup"
+  >
+    <div preview>
+      <div class="confetti">
+        <app-button
+          [type]="type"
+          [variant]="variant"
+          [label]="label"
+          [icon]="icon"
+        ></app-button>
+      </div>
+    </div>
+
+    <div controls>
+      <div class="control">
+        <app-input
+          label="Label"
+          [(ngModel)]="label"
+          *ngIf="variant !== 'icon'"
+        ></app-input>
+      </div>
+
+      <div class="control">
+        <app-input
+          label="Icon"
+          [(ngModel)]="icon"
+          *ngIf="variant !== 'default'"
+        ></app-input>
+      </div>
+
+      <div class="control">
+        <label>Variant</label>
+        <select [(ngModel)]="variant">
+          <option value="default">Default</option>
+          <option value="icon">Icon Only</option>
+          <option value="icon-label">Icon + Label</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <app-switch
+          label="Secondary"
+          [(checked)]="isSecondary"
+          (checkedChange)="updateTypeFromToggle($event)"
+        ></app-switch>
+      </div>
+
+      <div class="control">
+        <app-input
+        label="{{ type | titlecase }} Color"
+        type="color"
+        [(ngModel)]="colors[type]"
+        (input)="updateColorFromInput($event)"
+        ></app-input>
+      </div>
+    </div>
+  </app-playground>
+</section>

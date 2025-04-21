@@ -1,0 +1,26 @@
+<section class="playground">
+    <h3>{{ title }}</h3>
+  
+    <div class="playground-container">
+      <div class="playground-preview">
+        <ng-content select="[preview]"></ng-content>
+      </div>
+  
+      <div class="playground-controls">
+        <ng-content select="[controls]"></ng-content>
+      </div>
+    </div>
+  
+    <div class="playground-code">
+      <pre><code>{{ code }}</code></pre>
+      <app-button
+        icon="📋"
+        label="Copy Code"
+        variant="icon-label"
+        type="secondary"
+        (click)="copyCode()"
+        onkeypress="copyCode()"
+      ></app-button>
+    </div>
+  </section>
+  

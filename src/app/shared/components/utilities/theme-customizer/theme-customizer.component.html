@@ -1,0 +1,26 @@
+<label>
+  Primary Color
+  <input
+  type="color"
+  [value]="getValue('--primary')"
+  (input)="updateVar('--primary', getInputValue($event))"
+/>
+</label>
+
+<label>
+  Background
+  <input
+  type="color"
+  [value]="getValue('--bg-color')"
+  (input)="updateVar('--bg-color', getInputValue($event))"
+/>
+</label>
+
+<label>
+  Text
+  <input
+  type="color"
+  [value]="getValue('--text-color')"
+  (input)="updateVar('--text-color', getInputValue($event))"
+/>
+</label>
