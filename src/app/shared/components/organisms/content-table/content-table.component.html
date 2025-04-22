@@ -8,7 +8,7 @@
     aria-label="Toggle table of contents"
   ></app-button>
 
-  <app-card *ngIf="!collapsed" class="toc-card">
+  <app-card *ngIf="!collapsed" class="toc-card" [contentClass]="'toc-content-style'">
     <h4 class="toc-title">Table of Contents</h4>
     <ul class="toc-list">
       <li

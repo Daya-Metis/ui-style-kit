@@ -1,7 +1,7 @@
 <div class="card">
     <img *ngIf="image" [src]="image" alt="" class="card-image" />
   
-    <div class="card-content">
+    <div class="card-content" [ngClass]="contentClass">
       <ng-content></ng-content>
       <h4 *ngIf="title">{{ title }}</h4>
       <p *ngIf="text">{{ text }}</p>
