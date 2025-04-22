@@ -1,54 +1,50 @@
-<h3>Theme</h3>
+<div class="theme-header">
+  <h2>Theme</h2>
+
+  <app-button
+  label="Reset Theme"
+  [type]="'secondary'"
+  icon="🔄"
+  variant="grow"
+  (click)="resetTheme()"
+  onkeypress="resetTheme()"
+  />
+</div>
+
+<h3>Theme Tokens</h3>
 <section>
-  <h4>Theme Tokens</h4>
-<label>
-  Primary Color
-  <input
-  type="color"
-  [value]="getValue('--primary')"
-  (input)="updateVar('--primary', getInputValue($event))"
-/>
-</label>
+<app-input
+label="Primary Color"
+type="color"
+[(ngModel)]="customVars['--primary']"
+(input)="updateVar('--primary', getInputValue($event))"
+></app-input>
 
-<label>
-  Secondary Color
-  <input
-  type="color"
-  [value]="getValue('--secondary')"
-  (input)="updateVar('--secondary', getInputValue($event))"
-/>
-</label>
+<app-input
+label="Secondary Color"
+type="color"
+[(ngModel)]="customVars['--secondary']"
+(input)="updateVar('--secondary', getInputValue($event))"
+></app-input>
 
-<label>
-  Background
-  <input
-  type="color"
-  [value]="getValue('--bg-color')"
-  (input)="updateVar('--bg-color', getInputValue($event))"
-/>
-</label>
+<app-input
+label="Background"
+type="color"
+[(ngModel)]="customVars['--bg-color']"
+(input)="updateVar('--bg-color', getInputValue($event))"
+></app-input>
 
-<label>
-  Text
-  <input
-  type="color"
-  [value]="getValue('--text-color')"
-  (input)="updateVar('--text-color', getInputValue($event))"
-/>
-</label>
+<app-input
+label="Text"
+type="color"
+[(ngModel)]="customVars['--text-color']"
+(input)="updateVar('--text-color', getInputValue($event))"
+></app-input>
+
 </section>
 
+<h3>Extended Theme Tokens</h3>
 <section>
-  <h4>Extended Theme Tokens</h4>
-
-  <label>
-    Background Container
-    <input
-    type="color"
-    [value]="getValue('--bg-container')"
-    (input)="updateVar('--bg-container', getInputValue($event))"
-  />
-  </label>
   <app-input
     label="Background Container"
     type="color"
@@ -56,14 +52,6 @@
     (input)="updateVar('--bg-container', getInputValue($event))"
   ></app-input>
 
-  <label>
-    Accent Color
-    <input
-    type="color"
-    [value]="getValue('--accent')"
-    (input)="updateVar('--accent', getInputValue($event))"
-  />
-  </label>
   <app-input
     label="Accent Color"
     type="color"
@@ -72,19 +60,9 @@
   ></app-input>
 </section>
 
- <div>
-  <app-button
-  label="Reset Theme"
-  [type]="'secondary'"
-  icon="🔄"
-  variant="icon-label"
-  (click)="resetTheme()"
-  onkeypress="resetTheme()"
-/>
- </div>
 
+ <h3>Magic Theme Generator</h3>
  <section>
-  <h3>Magic Theme Generator</h3>
   <div class="theme-generator">
     <app-input
     label="Pick a base color"

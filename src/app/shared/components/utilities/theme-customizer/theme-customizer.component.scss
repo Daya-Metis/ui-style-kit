@@ -1,3 +1,10 @@
+section{
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+
 .theme-customizer {
     display: flex;
     flex-direction: column;
@@ -16,8 +23,13 @@
     }
   }
   
-.theme-generator{
+.theme-header, .theme-generator{
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  align-items: center;
+  gap: 3.125rem;
+}
+
+.theme-header {
+  gap: .625rem;
 }

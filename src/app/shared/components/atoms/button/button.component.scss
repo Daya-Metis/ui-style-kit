@@ -25,6 +25,7 @@ button {
     width: var(--btn-height);
     height: var(--btn-height);
     font-size: 1.25rem;
+    border-radius: 50%;
   }
 
   &.icon-label {

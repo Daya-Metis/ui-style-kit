@@ -1,9 +1,10 @@
-<label>
+<label [class.color-mode]="type === 'color'">
   <span>{{ label }}</span>
   <input
     [type]="type"
-    [value]="value"
-    (input)="handleInput($event)"
+    [(ngModel)]="value"
+    (ngModelChange)="onChange($event)"
     (blur)="onTouched()"
+    [style.background]="type === 'color' ? value : null"
   />
 </label>

@@ -3,8 +3,18 @@ label {
     flex-direction: column;
     gap: var(--spacing-xs);
     font-size: var(--font-size-sm);
+
+  &.color-mode {
+    flex-direction: row;
+    align-items: center;
+    span {
+      margin-right: var(--spacing-sm);
+      white-space: nowrap;
+    }
   }
   
+  } 
+
   input {
     padding: var(--spacing-sm);
     border-radius: var(--radius);

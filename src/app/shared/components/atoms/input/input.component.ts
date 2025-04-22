@@ -1,7 +1,8 @@
+import { CommonModule } from '@angular/common';
 import {
   Component, Input, forwardRef
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -12,7 +13,8 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => InputComponent),
     multi: true
-  }]
+  }],
+  imports: [CommonModule, FormsModule],
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() label = '';
