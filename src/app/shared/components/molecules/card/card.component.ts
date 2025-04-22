@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { Component, Input } from "@angular/core";
+import { ArrowComponent } from "@atoms/arrow/arrow.component";
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  standalone: true,
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrls: ['./card.component.scss'],
+  imports: [CommonModule, ArrowComponent]
 })
 export class CardComponent {
-
+  @Input() image: string | null = null;
+  @Input() title: string = '';
+  @Input() text: string = '';
+  @Input() link: string | null = null;
+  @Input() showArrow = false;
 }
