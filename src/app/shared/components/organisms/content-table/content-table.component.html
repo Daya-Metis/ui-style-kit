@@ -3,15 +3,18 @@
     [icon]="collapsed ? '☰' : '❌'"
     variant="icon"
     class="toc-toggle"
-    aria-label="Toggle table of contents"
     (click)="toggle()"
     onkeypress="toggle()"
+    aria-label="Toggle table of contents"
   ></app-button>
 
   <app-card *ngIf="!collapsed" class="toc-card">
     <h4 class="toc-title">Table of Contents</h4>
     <ul class="toc-list">
-      <li *ngFor="let section of sections">
+      <li
+        *ngFor="let section of sections"
+        [class.active]="section.id === activeId"
+      >
         <a href="#" (click)="scrollTo(section.id, $event)">
           {{ section.label }}
         </a>
@@ -19,3 +22,4 @@
     </ul>
   </app-card>
 </div>
+

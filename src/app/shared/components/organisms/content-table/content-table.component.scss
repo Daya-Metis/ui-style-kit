@@ -6,22 +6,12 @@
 
 .toc-toggle {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: var(--bg-container);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  width: 2.5rem;
-  height: 2.5rem;
+  z-index: 20;
 }
 
 .toc-card {
-  margin-top: 1rem; // Create space below the floating button
   padding: var(--spacing-md);
-  background: var(--bg-container);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
