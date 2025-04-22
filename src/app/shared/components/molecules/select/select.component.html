@@ -1,0 +1,45 @@
+<div class="select-wrapper">
+  <button
+    class="select-trigger"
+    (click)="toggleOpen()"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="open"
+  >
+    {{ displayValue || 'Select...' }}
+    <app-arrow></app-arrow>
+  </button>
+
+  <div class="select-options" *ngIf="open">
+      <ng-container *ngIf="isRadio">
+          <app-radio
+            *ngFor="let option of options"
+            [label]="option"
+            [value]="option"
+            [model]="modelString"
+            (modelChange)="updateRadio($event)"
+          ></app-radio>
+        </ng-container>
+        
+        <ng-container *ngIf="isCheckboxSingle">
+          <app-checkbox
+            *ngFor="let option of options"
+            [label]="option"
+            [value]="option"
+            [model]="modelString"
+            (modelChange)="updateCheckboxSingle($event)"
+          ></app-checkbox>
+        </ng-container>
+        
+        <ng-container *ngIf="isCheckboxMulti">
+          <app-checkbox
+            *ngFor="let option of options"
+            [label]="option"
+            [value]="option"
+            [model]="modelArray"
+            (modelChange)="updateCheckboxMulti($event)"
+          ></app-checkbox>
+        </ng-container>
+        
+  </div>
+
+</div>

@@ -1,6 +1,10 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 // 🌞 LIGHT THEME
 :root {
     --bg-color: #ffffff;
+    --bg-container: #f5f5f5;
     --text-color: #1e1e1e;
     --primary: #007bff;
     --secondary: #6c757d;
@@ -26,6 +30,7 @@
     --transition: all 0.3s ease;
 
     --btn-height: 3rem;
+    --input-height: 2.5rem;
   }
   
   // 🌚 DARK THEME

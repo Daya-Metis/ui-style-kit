@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '@atoms/button/button.component';
 
@@ -7,7 +7,8 @@ import { ButtonComponent } from '@atoms/button/button.component';
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   templateUrl: './playground.component.html',
-  styleUrls: ['./playground.component.scss']
+  styleUrls: ['./playground.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PlaygroundComponent {
   @Input() title = '';

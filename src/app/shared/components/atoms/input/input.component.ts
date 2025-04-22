@@ -17,7 +17,6 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 export class InputComponent implements ControlValueAccessor {
   @Input() label = '';
   @Input() type: string = 'text';
-
   value: string = '';
 
   onChange = (_: any) => {};

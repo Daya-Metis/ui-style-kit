@@ -1,5 +1,5 @@
-<div class="modal-backdrop" *ngIf="show" (click)="onClose()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
+<div class="modal-backdrop" *ngIf="show" (click)="onClose()" onkeypress="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()" onkeypress="$event.stopPropagation()">
       <div class="modal-body">
         <ng-content select="[modal-body]"></ng-content>
       </div>
@@ -8,6 +8,7 @@
           label="Cancel"
           type="secondary"
           (click)="onClose()"
+          onkeypress="onClose()"
         ></app-button>
         <app-button
           label="Save"

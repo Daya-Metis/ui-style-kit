@@ -5,13 +5,21 @@ import { SwitchComponent } from '@atoms/switch/switch.component';
 import { FormsModule } from '@angular/forms';
 import { NgIf, TitleCasePipe } from '@angular/common';
 import { PlaygroundComponent } from '@utilities/playground/playground.component';
+import { SelectComponent } from '@molecules/select/select.component';
+import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
+import { RadioComponent } from '@atoms/radio/radio.component';
+import { ArrowComponent } from '@atoms/arrow/arrow.component';
 
 @Component({
   selector: 'app-atoms',
   standalone: true,
   imports: [
+    ArrowComponent,
     ButtonComponent,
+    CheckboxComponent,
+    RadioComponent,
     InputComponent,
+    SelectComponent,
     SwitchComponent,
     PlaygroundComponent,
     FormsModule, NgIf, TitleCasePipe
@@ -20,14 +28,15 @@ import { PlaygroundComponent } from '@utilities/playground/playground.component'
   styleUrls: ['./atoms.component.scss']
 })
 export class AtomsComponent {
-  variant: 'default' | 'icon' | 'icon-label' = 'default';
+  variant: 'default' | 'icon' | 'icon-label' | 'grow' = 'default';
   type: 'primary' | 'secondary' = 'primary';
-  isSecondary = false;
-
-  updateTypeFromToggle(checked: boolean) {
-    this.isSecondary = checked;
-    this.type = checked ? 'secondary' : 'primary';
-  }
+  isPrimary = false;
+  checkboxState = false;
+  radioSelection = 'primary';
+  searchQuery = '';
+  switchState = true;
+  growDirection : 'left' | 'right' = 'right';
+  toLeft = false;
 
   label = 'Click Me';
   icon = '👍';
@@ -35,6 +44,16 @@ export class AtomsComponent {
     primary: '#007bff',
     secondary: '#6c757d'
   };
+
+  updateTypeFromToggle(checked: boolean) {
+    this.isPrimary = checked;
+    this.type = checked ? 'primary' : 'secondary';
+  }
+
+  updateDirectionFromToggle(checked: boolean) {
+    this.toLeft = checked;
+    this.growDirection = checked ? 'left' : 'right';
+  }
   
   updateColorFromInput(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -73,4 +92,11 @@ export class AtomsComponent {
     navigator.clipboard.writeText(this.buttonMarkup);
   }
   
+  confettiActive = false;
+
+  triggerConfetti() {
+    this.confettiActive = true;
+    setTimeout(() => this.confettiActive = false, 1000); // 1 second
+  }
+
 }

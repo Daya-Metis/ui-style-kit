@@ -1,0 +1,10 @@
+<label class="radio-wrapper">
+    <input
+      type="radio"
+      [checked]="model === value"
+      (change)="select()"
+    />
+    <span class="radio-circle"></span>
+    <span class="radio-label">{{ label }}</span>
+  </label>
+  

@@ -21,3 +21,6 @@ label {
     }
   }
   
+  input:not([type='color']) {
+    min-height: var(--input-height);
+  }

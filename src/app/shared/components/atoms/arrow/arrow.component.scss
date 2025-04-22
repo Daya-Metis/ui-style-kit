@@ -1,0 +1,70 @@
+.arrow {
+    display: inline-block;
+    border: solid var(--primary);
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    margin: var(--spacing-sm);
+    transition: transform 0.2s ease, translate 0.2s ease;
+  }
+  
+  /* Sizes */
+  .arrow.sm {
+    padding: 3px;
+  }
+  
+  .arrow.md {
+    padding: 4px;
+  }
+  
+  .arrow.lg {
+    padding: 6px;
+    border-width: 0 3px 3px 0;
+  }
+  
+  /* Directions */
+  .arrow.right {
+    transform: rotate(45deg);
+  }
+  .arrow.left {
+    transform: rotate(225deg);
+  }
+  .arrow.up {
+    transform: rotate(-45deg);
+  }
+  .arrow.down {
+    transform: rotate(135deg);
+  }
+  
+  /* Hover animation */
+  .arrow:hover {
+    animation: wiggle 0.2s forwards;
+  }
+  
+  /* Direction-aware animation */
+  @keyframes wiggle {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: var(--arrow-x, 0) var(--arrow-y, 0);
+    }
+  }
+  
+  /* Direction-specific wiggle values */
+  .arrow.right:hover {
+    --arrow-x: 0;
+    --arrow-y: 4px;
+  }
+  .arrow.left:hover {
+    --arrow-x: 0;
+    --arrow-y: -4px;
+  }
+  .arrow.up:hover {
+    --arrow-x: 4px;
+    --arrow-y: 0;
+  }
+  .arrow.down:hover {
+    --arrow-x: -4px;
+    --arrow-y: 0;
+  }
+  

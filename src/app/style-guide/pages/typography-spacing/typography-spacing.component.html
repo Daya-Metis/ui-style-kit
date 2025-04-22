@@ -6,16 +6,7 @@
 
 <hr />
 
-<app-input label="Name" placeholder="Your name"></app-input>
-
-<hr />
-
-<app-button label="Primary Button" type="primary"></app-button>
-<app-button label="Secondary Button" type="secondary"></app-button>
-
-<hr />
-
-<button (click)="showModal = true">Open Modal</button>
+<app-button (click)="showModal = true" onkeypress="showModal" label="Open Modal"></app-button>
 
 <app-modal [show]="showModal" (close)="showModal = false">
   <div modal-body>
