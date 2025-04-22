@@ -4,6 +4,7 @@ import { ButtonComponent } from "@atoms/button/button.component";
 import { CardComponent } from "@molecules/card/card.component";
 import { CollapsibleComponent } from "@molecules/collapsible/collapsible.component";
 import { SelectComponent } from "@molecules/select/select.component";
+import { ContentTableComponent } from "@organisms/content-table/content-table.component";
 
 @Component({
   selector: 'app-molecules',
@@ -13,7 +14,8 @@ import { SelectComponent } from "@molecules/select/select.component";
     ButtonComponent,
     CardComponent,
     CollapsibleComponent, //TODO
-    SelectComponent
+    SelectComponent,
+    ContentTableComponent
   ],
   templateUrl: './molecules.component.html',
   styleUrls: ['./molecules.component.scss']

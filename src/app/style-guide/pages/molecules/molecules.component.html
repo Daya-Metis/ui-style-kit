@@ -1,33 +1,49 @@
-<h2>🧬 Molecules</h2>
+<div class="page-layout">
+  <aside class="toc-panel">
+    <div class="toc-sticky">
+        <app-content-table
+          [sections]="[
+            { id: 'card', label: 'Card' },
+            { id: 'collapsible', label: 'collapsible' },
+            { id: 'select', label: 'Select' }
+          ]"
+        />
+    </div>
+  </aside>
 
-<section id="card">
-  <h3>Card</h3>
-  <app-card
-    image="https://placekitten.com/100"
-    title="Design Tokens"
-    text="Explore the system"
-    link="/style-guide/tokens"
-  ></app-card>
-</section>
+  <main class="main-content">
+    <h2>🧬 Molecules</h2>
 
-<section id="collapsible">
-  <h3>Collapsible</h3>
-  <app-collapsible
-  title="What is Atomic Design?"
-  preview="Click to learn more"
->
-  <p>
-    Atomic design is a methodology composed of atoms, molecules, organisms, templates, and pages.
-  </p>
-</app-collapsible>
-</section>
+    <section id="card">
+      <h3>Card</h3>
+      <app-card
+        image="https://placekitten.com/100"
+        title="Design Tokens"
+        text="Explore the system"
+        link="/style-guide/tokens"
+      ></app-card>
+    </section>
 
-<section id="select">
-  <h3>Select</h3>
-  <app-select
-    [options]="['default', 'icon-label', 'grow']"
-    [mode]="'radio'"
-    [(model)]="selectedVariant"
-    label="Choose Variant"
-  ></app-select>
-</section>
+    <section id="collapsible">
+      <h3>Collapsible</h3>
+      <app-collapsible
+      title="What is Atomic Design?"
+      preview="Click to learn more"
+    >
+      <p>
+        Atomic design is a methodology composed of atoms, molecules, organisms, templates, and pages.
+      </p>
+    </app-collapsible>
+    </section>
+
+    <section id="select">
+      <h3>Select</h3>
+      <app-select
+        [options]="['default', 'icon-label', 'grow']"
+        [mode]="'radio'"
+        [(model)]="selectedVariant"
+        label="Choose Variant"
+      ></app-select>
+    </section>
+  </main>
+</div>

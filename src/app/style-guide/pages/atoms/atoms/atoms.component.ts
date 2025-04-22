@@ -9,6 +9,7 @@ import { SelectComponent } from '@molecules/select/select.component';
 import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
 import { RadioComponent } from '@atoms/radio/radio.component';
 import { ArrowComponent } from '@atoms/arrow/arrow.component';
+import { ContentTableComponent } from '@organisms/content-table/content-table.component';
 
 @Component({
   selector: 'app-atoms',
@@ -22,6 +23,7 @@ import { ArrowComponent } from '@atoms/arrow/arrow.component';
     SelectComponent,
     SwitchComponent,
     PlaygroundComponent,
+    ContentTableComponent,
     FormsModule, NgIf, TitleCasePipe
   ],
   templateUrl: './atoms.component.html',
