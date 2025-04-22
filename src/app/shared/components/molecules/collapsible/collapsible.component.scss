@@ -1,0 +1,40 @@
+.collapsible-card {
+    background: var(--bg-container);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+  
+    &:hover {
+      box-shadow: var(--shadow-md);
+    }
+  }
+  
+  .collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    h4 {
+      margin: 0;
+      font-size: var(--font-size-md);
+    }
+  
+    p {
+      margin: 0;
+      font-size: var(--font-size-sm);
+      color: var(--text-color);
+    }
+  }
+  
+  .collapsible-body {
+    margin-top: var(--spacing-sm);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  

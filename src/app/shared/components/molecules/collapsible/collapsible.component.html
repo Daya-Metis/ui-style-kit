@@ -1,1 +1,14 @@
-<p>collapsible works!</p>
+<div role=button class="collapsible-card" (click)="toggle()" onkeypress="toggle()">
+    <div class="collapsible-header">
+      <div>
+        <h4>{{ title }}</h4>
+        <p>{{ preview }}</p>
+      </div>
+      <app-arrow [direction]="expanded ? 'up' : 'down'" style="size: 200%"></app-arrow>
+    </div>
+  
+    <div class="collapsible-body" *ngIf="expanded">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  

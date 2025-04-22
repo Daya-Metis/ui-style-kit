@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ArrowComponent } from '@atoms/arrow/arrow.component';
 
 @Component({
   selector: 'app-collapsible',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, ArrowComponent],
   templateUrl: './collapsible.component.html',
-  styleUrl: './collapsible.component.scss'
+  styleUrls: ['./collapsible.component.scss']
 })
 export class CollapsibleComponent {
+  @Input() title = '';
+  @Input() preview = '';
+  @Input() expanded = false;
 
+  toggle() {
+    this.expanded = !this.expanded;
+  }
 }
+

@@ -46,10 +46,12 @@
     background: transparent;
     transition: transform 0.2s ease;
     color: var(--text-color);
+    width: 3.125rem;
+    height: 3.125rem;
   
     &:hover {
       transform: scale(1.1);
-      background: var(--bg-color);
+      transform: translateX(2px);
     }
   }
   

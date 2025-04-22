@@ -6,7 +6,7 @@
     [attr.aria-expanded]="open"
   >
     {{ displayValue || 'Select...' }}
-    <app-arrow></app-arrow>
+    <app-arrow direction="down"></app-arrow>
   </button>
 
   <div class="select-options" *ngIf="open">

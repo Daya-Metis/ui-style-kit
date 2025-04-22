@@ -1,4 +1,2 @@
-<span class="arrow-container" [ngClass]="[size, direction]">
-    <span class="arrow"></span>
-  </span>
-  
+
+<span class="arrow" [ngClass]="[direction]" [ngStyle]="{'transform': getTransform()}"></span>

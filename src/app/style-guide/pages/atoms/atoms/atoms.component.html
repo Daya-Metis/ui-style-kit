@@ -98,11 +98,12 @@
   <app-input label="Name" placeholder="Your name"></app-input>
 </section>
 
-<section>
+<section class="arrow-section">
   <h3>Arrow</h3>
-  <app-arrow></app-arrow> <!-- default: md right -->
-  <app-arrow size="lg" direction="left"></app-arrow>
-  <app-arrow direction="up"></app-arrow>
+  <span>Default: 100% right</span><app-arrow></app-arrow>
+  <span>200% left</span><app-arrow direction="left" [scale]="2"></app-arrow>
+  <span>80% up</span><app-arrow direction="up" [scale]="0.8"></app-arrow>
+  <span>150% down</span><app-arrow direction="down" [scale]="1.5"></app-arrow>
 </section>
 
 <section>

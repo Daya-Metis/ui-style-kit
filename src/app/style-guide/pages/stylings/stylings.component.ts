@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ButtonComponent } from '@atoms/button/button.component';
 import { InputComponent } from '@atoms/input/input.component';
-import { ThemeCustomizerComponent } from 'app/shared/utilities/theme-customizer/theme-customizer.component';
+import { TypographySpacingComponent } from '../typography-spacing/typography-spacing.component';
 
 @Component({
   selector: 'app-stylings',
@@ -11,7 +11,7 @@ import { ThemeCustomizerComponent } from 'app/shared/utilities/theme-customizer/
     CommonModule,
     ButtonComponent,
     InputComponent,
-    ThemeCustomizerComponent
+    TypographySpacingComponent
   ],
   templateUrl: './stylings.component.html',
   styleUrls: ['./stylings.component.scss']

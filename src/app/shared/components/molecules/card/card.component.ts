@@ -14,5 +14,4 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() text: string = '';
   @Input() link: string | null = null;
-  @Input() showArrow = false;
 }

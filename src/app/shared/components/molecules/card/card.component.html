@@ -6,8 +6,8 @@
       <p *ngIf="text">{{ text }}</p>
     </div>
   
-    <a *ngIf="showArrow && link" [href]="link" class="card-arrow-link">
-      <app-arrow direction="right"></app-arrow>
+    <a *ngIf="link" [href]="link" class="card-arrow-link">
+      <app-arrow direction="right" [scale]="1.5"></app-arrow>
     </a>
   </div>
   
