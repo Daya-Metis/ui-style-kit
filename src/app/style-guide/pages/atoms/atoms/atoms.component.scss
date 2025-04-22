@@ -1,5 +1,8 @@
 section {
     margin-bottom: var(--spacing-lg);
+    div{
+      margin-bottom: var(--spacing-md);
+    }
 }
 
   .arrow-section{
@@ -7,6 +10,7 @@ section {
       margin: 1.5625rem;
     }
   }
+
   
   .playground-container {
     display: flex;

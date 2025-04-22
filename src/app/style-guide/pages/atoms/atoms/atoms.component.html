@@ -115,7 +115,29 @@
 
     <section id="input-section">
       <h3>Input</h3>
-      <app-input label="Name" placeholder="Your name"></app-input>
+      <div>
+        <app-input label="Name" placeholder="Your name"></app-input>
+      </div>
+      <div>
+        <app-input label="Mail" type="email"></app-input>
+      </div>
+      <div>
+        <app-input label="Number" type="number"></app-input>
+      </div> 
+      <div>
+        <app-input
+          label="Icon"
+          type="icon"
+          [(ngModel)]="icon"
+        ></app-input>
+      </div>
+      <div>
+        <app-input
+          label="Color"
+          type="color"
+          [(ngModel)]="colors[type]"
+          ></app-input>
+      </div>
     </section>
 
     <section class="arrow-section">
@@ -129,6 +151,7 @@
     <section id="checks-section">
       <h3>Checkbox & Radio</h3>
       <app-checkbox label="Accept Terms" [(checked)]="checkboxState"></app-checkbox>
+      <app-checkbox label="Accept Terms" (checked)="true"></app-checkbox>
       <app-radio label="Primary Option" value="primary" [(model)]="radioSelection"></app-radio>
       <app-radio label="Secondary Option" value="secondary" [(model)]="radioSelection"></app-radio>
     </section>

@@ -34,3 +34,7 @@ label {
   input:not([type='color']) {
     min-height: var(--input-height);
   }
+  
+  input:is([type='number']), input:is([type='icon']) {
+    max-width: 6rem;
+  }
