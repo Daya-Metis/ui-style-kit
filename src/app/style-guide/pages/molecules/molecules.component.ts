@@ -3,7 +3,6 @@ import { Component } from "@angular/core";
 import { ButtonComponent } from "@atoms/button/button.component";
 import { CardComponent } from "@molecules/card/card.component";
 import { CollapsibleComponent } from "@molecules/collapsible/collapsible.component";
-import { DropdownComponent } from "@molecules/dropdown/dropdown.component";
 import { SelectComponent } from "@molecules/select/select.component";
 
 @Component({
@@ -14,7 +13,6 @@ import { SelectComponent } from "@molecules/select/select.component";
     ButtonComponent,
     CardComponent,
     CollapsibleComponent, //TODO
-    DropdownComponent,
     SelectComponent
   ],
   templateUrl: './molecules.component.html',
