@@ -2,6 +2,7 @@
     <img *ngIf="image" [src]="image" alt="" class="card-image" />
   
     <div class="card-content">
+      <ng-content></ng-content>
       <h4 *ngIf="title">{{ title }}</h4>
       <p *ngIf="text">{{ text }}</p>
     </div>
@@ -9,5 +10,5 @@
     <a *ngIf="link" [href]="link" class="card-arrow-link">
       <app-arrow direction="right" [scale]="1.5"></app-arrow>
     </a>
-  </div>
+</div>
   

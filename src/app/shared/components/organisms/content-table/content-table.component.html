@@ -1,0 +1,21 @@
+<div class="toc-container">
+  <app-button
+    [icon]="collapsed ? '☰' : '❌'"
+    variant="icon"
+    class="toc-toggle"
+    aria-label="Toggle table of contents"
+    (click)="toggle()"
+    onkeypress="toggle()"
+  ></app-button>
+
+  <app-card *ngIf="!collapsed" class="toc-card">
+    <h4 class="toc-title">Table of Contents</h4>
+    <ul class="toc-list">
+      <li *ngFor="let section of sections">
+        <a href="#" (click)="scrollTo(section.id, $event)">
+          {{ section.label }}
+        </a>
+      </li>
+    </ul>
+  </app-card>
+</div>

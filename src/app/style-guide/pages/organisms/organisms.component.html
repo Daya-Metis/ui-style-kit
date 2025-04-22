@@ -1,37 +1,56 @@
-<h2>🧠 Organisms</h2>
+<div class="page-layout">
+  <aside class="toc-panel">
+    <div class="toc-sticky">
+      <section id="toc">
+        <h3>Table of Contents Component</h3>
+        <app-content-table
+          [sections]="[
+            { id: 'upload', label: 'Upload' },
+            { id: 'modal', label: 'Modal' },
+            { id: 'tabs', label: 'Tabs' },
+            { id: 'toast', label: 'Toast' }
+          ]"
+        />
+      </section>
+    </div>
+  </aside>
 
-<section id="file-upload">
-  <h3>File Upload</h3>
-  <app-upload-demo></app-upload-demo>
-</section>
+  <main class="main-content">
+        
+    <h2>🧠 Organisms</h2>
 
-<section id="modal">
-  <h3>Modal</h3>
-  <app-button (click)="showModal = true" onkeypress="showModal" label="Open Modal"></app-button>
+    <section id="upload">
+      <h3>File Upload</h3>
+      <app-upload-demo></app-upload-demo>
+      <hr>
+    </section>
 
-<app-modal [show]="showModal" (close)="showModal = false">
-  <div modal-body>
-    <h2>This is a modal</h2>
-    <p>You can use slots to inject content.</p>
-  </div>
-  <div modal-footer>
-    <button (click)="showModal = false">Cancel</button>
-    <button>Save</button>
-  </div>
-</app-modal>
-</section>
+    <section id="modal">
+      <h3>Modal</h3>
+      <app-button (click)="showModal = true" onkeypress="showModal" label="Open Modal"></app-button>
 
-<section id="tabs">
-  <h3>Tabs</h3>
-  <!-- TODO: TabsComponent -->
-</section>
+    <app-modal [show]="showModal" (close)="showModal = false">
+      <div modal-body>
+        <h2>This is a modal</h2>
+        <p>You can use slots to inject content.</p>
+      </div>
+      <div modal-footer>
+        <button (click)="showModal = false">Cancel</button>
+        <button>Save</button>
+      </div>
+    </app-modal>
+    <hr>
+    </section>
 
-<section id="toast">
-  <h3>Toast</h3>
-  <!-- TODO: ToastComponent -->
-</section>
+    <section id="tabs">
+      <h3>Tabs</h3>
+      <!-- TODO: TabsComponent -->
+       <hr>
+    </section>
 
-<section id="toc">
-  <h3>Table of Contents Component</h3>
-  <!-- TODO: TOCComponent Demo -->
-</section>
+    <section id="toast">
+      <h3>Toast</h3>
+      <!-- TODO: ToastComponent -->
+    </section>
+  </main>
+</div>
