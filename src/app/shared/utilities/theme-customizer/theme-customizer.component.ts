@@ -14,6 +14,7 @@ import { InputComponent } from '@atoms/input/input.component';
 export class ThemeCustomizerComponent {
   customVars: { [key: string]: string } = {
     '--primary': '#007bff',
+    '--secondary': '#6c757d',
     '--bg-color': '#ffffff',
     '--text-color': '#1e1e1e',
     '--bg-container': '#f5f5f5',

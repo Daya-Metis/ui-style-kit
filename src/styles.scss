@@ -9,6 +9,8 @@
     --primary: #007bff;
     --secondary: #6c757d;
     --accent: #ffc107;
+
+    --border-color: #ccc;
   
     --font-size-base: 16px;
     --font-size-sm: 0.875rem;
@@ -60,6 +62,7 @@
     display: flex;
     gap: var(--spacing-lg);
     padding: var(--spacing-lg);
+    padding-left: 0;
   }
   
   .toc-panel {
