@@ -6,27 +6,6 @@
 
 <hr />
 
-<app-button (click)="showModal = true" onkeypress="showModal" label="Open Modal"></app-button>
-
-<app-modal [show]="showModal" (close)="showModal = false">
-  <div modal-body>
-    <h2>This is a modal</h2>
-    <p>You can use slots to inject content.</p>
-  </div>
-  <div modal-footer>
-    <button (click)="showModal = false">Cancel</button>
-    <button>Save</button>
-  </div>
-</app-modal>
-<app-card
-  image="https://placekitten.com/100"
-  title="The Kitten Card"
-  text="Click here to see more fluffy data"
-  link="/kittens"
-  [showArrow]="true"
-/>
-
-<hr />
 
 
 <app-theme-customizer></app-theme-customizer>

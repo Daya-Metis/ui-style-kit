@@ -4,7 +4,7 @@ import { InputComponent } from '@atoms/input/input.component';
 import { SwitchComponent } from '@atoms/switch/switch.component';
 import { FormsModule } from '@angular/forms';
 import { NgIf, TitleCasePipe } from '@angular/common';
-import { PlaygroundComponent } from '@utilities/playground/playground.component';
+import { PlaygroundComponent } from 'app/shared/utilities/playground/playground.component';
 import { SelectComponent } from '@molecules/select/select.component';
 import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
 import { RadioComponent } from '@atoms/radio/radio.component';

@@ -1,1 +1,6 @@
-<p>dropdown works!</p>
+<label *ngIf="label">{{ label }}</label>
+<select>
+  <option *ngFor="let option of options" [value]="option">
+    {{ option }}
+  </option>
+</select>

@@ -1,0 +1,35 @@
+<h2>🧬 Molecules</h2>
+
+<section id="card">
+  <h3>Card</h3>
+  <app-card
+    image="https://placekitten.com/100"
+    title="Design Tokens"
+    text="Explore the system"
+    link="/style-guide/tokens"
+    [showArrow]="true"
+  ></app-card>
+</section>
+
+<section id="collapsible">
+  <h3>Collapsible</h3>
+  <!-- TODO: Insert CollapsibleComponent -->
+</section>
+
+<section id="dropdown">
+  <h3>Dropdown</h3>
+  <app-dropdown
+    [options]="['Option 1', 'Option 2', 'Option 3']"
+    label="Dropdown Options"
+  ></app-dropdown>
+</section>
+
+<section id="select">
+  <h3>Select</h3>
+  <app-select
+    [options]="['default', 'icon-label', 'grow']"
+    [mode]="'radio'"
+    [(model)]="selectedVariant"
+    label="Choose Variant"
+  ></app-select>
+</section>
