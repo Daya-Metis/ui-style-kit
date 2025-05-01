@@ -7,7 +7,13 @@
     cursor: pointer;
   
     &:hover {
+      opacity: var(--hover-opacity);
       box-shadow: var(--shadow-md);
+    }
+    &:focus, &:focus-visible {
+      outline: var(--focus-outline);
+      border-color: var(--focus-border);
+      box-shadow: var(--focus-shadow);
     }
   }
   

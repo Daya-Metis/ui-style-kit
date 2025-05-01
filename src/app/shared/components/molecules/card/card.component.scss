@@ -13,7 +13,13 @@
   }
   
   .card:hover {
+    opacity: var(--hover-opacity);
     box-shadow: var(--shadow-md);
+  }
+  .card:focus, card:focus-visible {
+    outline: var(--focus-outline);
+    border-color: var(--focus-border);
+    box-shadow: var(--focus-shadow);
   }
   
   .card-image {

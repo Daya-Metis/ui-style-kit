@@ -33,11 +33,11 @@ button {
   }
 
   &:hover {
-    opacity: 0.9;
+    opacity: var(--hover-opacity);
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: var(--disabled-opacity);
     cursor: not-allowed;
   }
 
@@ -96,7 +96,7 @@ button {
   }
 }
 
-/* Direction Awareness */
+/* Direction Awareness Grow Button */
 .grow.left {
   flex-direction: row-reverse;
 

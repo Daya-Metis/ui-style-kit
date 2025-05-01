@@ -19,7 +19,7 @@
     --font-weight-normal: 400;
     --font-weight-bold: 700;
   
-    --radius: 8px;
+    --radius: .5rem;
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -34,6 +34,13 @@
     --btn-height: 3rem;
     --input-height: 2.5rem;
     --min-height: 1.4375rem;
+
+    --disabled-opacity: 0.5;
+    --hover-opacity: 0.9;
+    --focus-outline: none;
+    --focus-border: var(--primary);
+    --focus-shadow: 0 0 0 2px var(--accent);
+    --float-style: ;
   }
   
   // 🌚 DARK THEME
@@ -62,7 +69,6 @@
     display: flex;
     gap: var(--spacing-lg);
     padding: var(--spacing-lg);
-    padding-left: 0;
   }
   
   .toc-panel {

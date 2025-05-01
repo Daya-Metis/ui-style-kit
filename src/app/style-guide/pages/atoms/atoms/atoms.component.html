@@ -87,7 +87,7 @@
           <div class="control" 
           *ngIf="variant === 'grow'">
             <app-switch
-              label="Direction"
+              label="Grow to Left"
               [(checked)]="toLeft"
               (checkedChange)="updateDirectionFromToggle($event)"
             ></app-switch>
@@ -95,7 +95,7 @@
 
           <div class="control">
             <app-switch
-              label="Primary"
+              label="Primary Button"
               [(checked)]="isPrimary"
               (checkedChange)="updateTypeFromToggle($event)"
             ></app-switch>

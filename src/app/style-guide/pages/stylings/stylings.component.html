@@ -1,40 +1,80 @@
-<h2>🎨 Stylings</h2>
-<section>
-  <app-typography-spacing></app-typography-spacing>
-  <hr />
-</section>
+<div class="page-layout">
+  <aside class="toc-panel">
+    <div class="toc-sticky">
+        <app-content-table
+          [sections]="[
+            { id: 'typography-section', label: 'Typography' },
+            { id: 'spacing-section', label: 'Spacing' },
+            { id: 'hover-buttons', label: 'Hover' },
+            { id: 'focus-section', label: 'Focus' },
+            { id: 'shadows-section', label: 'Shadows' },
+            { id: 'floating-section', label: 'Floating' },
+            { id: 'dividers-section', label: 'Dividers' }
+          ]"
+        />
+    </div>
+  </aside>
 
-<section id="hover">
-  <h3>Hover Effects</h3>
-  <app-button label="Hover Me" icon="🎯" variant="icon-label"></app-button>
-  <p>Observe background and shadow transitions on hover.</p>
-</section>
+  <main class="main-content">
+    <h2>🎨 Stylings</h2>
+    <section id="typography-section">
+      <app-typography-spacing></app-typography-spacing>
+      <hr />
+    </section>
 
-<section id="focus">
-  <h3>Focus States</h3>
-  <app-input label="Focus Here" placeholder="Click or tab in"></app-input>
-  <hr />
-</section>
+    <section id="spacing-section">
+      <h3>Spacing Scale</h3>
 
-<section id="shadows">
-  <h3>Component Shadows</h3>
-  <div class="shadow-demo shadow-xs">Shadow XS</div>
-  <div class="shadow-demo shadow-sm">Shadow SM</div>
-  <div class="shadow-demo shadow-md">Shadow MD</div>
-  <div class="shadow-demo shadow-lg">Shadow LG</div>
-  <hr />
-</section>
+      <div class="spacing-showcase">
+        <div class="spacing-row" *ngFor="let size of spacings">
+          <div class="spacing-label">{{ size.token }} ({{ size.value }}px)</div>
+          <div class="spacing-bar" [ngStyle]="{ width: size.value + 'px' }"></div>
+          <pre><code>margin: var({{ size.token }})</code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
 
-<section id="floating">
-  <h3>Floating UI Examples</h3>
-  <app-button icon="☰" variant="icon" class="float-button"></app-button>
-  <p>This floating button uses our float utility class.</p>
-  <hr />
-</section>
+    <section id="hover-section">
+      <h3>Hover Style</h3>
+      <div class="hover-container">
+        <div class="demo-container">Default</div>
+        <div class="demo-container hover-demo">Hovered</div>
+      </div>
+      <pre><code [innerText]="hoverCode"></code></pre>
+      <hr />
+    </section>
 
-<section id="dividers">
-  <h3>Dividers</h3>
-  <hr class="divider divider-sm" />
-  <hr class="divider divider-md" />
-  <hr class="divider divider-lg" />
-</section>
+    <section id="focus-secion">
+      <h3>Focus Style</h3>
+      <div class="demo-container focus-demo">Focused</div>
+      <pre><code [innerText]="focusCode"></code></pre>
+       
+      <hr />
+    </section>
+
+    <h3>Shadow Levels</h3>
+    <section id="shadows-section">
+      <div class="demo-container shadow-xs">Shadow XS</div>
+      <div class="demo-container shadow-sm">Shadow SM</div>
+      <div class="demo-container shadow-md">Shadow MD</div>
+      <div class="demo-container shadow-lg">Shadow LG</div>    
+    </section>
+    <hr />
+
+    <section id="floating-section">
+      <h3>Float</h3>
+      <div class="demo-container float-demo">Floating UI</div>
+      <pre><code [innerText]="floatCode">
+      </code></pre>
+      <hr>
+    </section>
+
+    <section id="dividers-section">
+      <h3>Dividers</h3>
+      <hr class="divider divider-sm" />
+      <hr class="divider divider-md" />
+      <hr class="divider divider-lg" />
+    </section>
+  </main>
+</div>

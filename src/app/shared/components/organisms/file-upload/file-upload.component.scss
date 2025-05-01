@@ -22,6 +22,16 @@
     margin: 0;
     font-weight: var(--font-weight-bold);
   }
+
+  &:hover {
+    background: var(--bg-container);
+    box-shadow: var(--shadow-md);
+  }
+  &:focus, &:focus-visible {
+    outline: var(--focus-outline);
+    border-color: var(--focus-border);
+    box-shadow: var(--focus-shadow);
+  }
 }
 
 .file-details {

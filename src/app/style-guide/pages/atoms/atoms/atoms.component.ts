@@ -31,7 +31,7 @@ import { ContentTableComponent } from '@organisms/content-table/content-table.co
 })
 export class AtomsComponent {
   variant: 'default' | 'icon' | 'icon-label' | 'grow' = 'default';
-  type: 'primary' | 'secondary' = 'primary';
+  type: 'primary' | 'secondary' = 'secondary';
   isPrimary = false;
   checkboxState = false;
   radioSelection = 'primary';
