@@ -44,6 +44,35 @@
 
     <section id="tabs">
       <h3>Tabs</h3>
+      <h4>Underline LG Vertical Tab</h4>
+      <app-tabs
+        [tabs]="[
+          { id: 'overview', label: 'Overview', icon: '📄' },
+          { id: 'settings', label: 'Settings', icon: '⚙️', closeable: true },
+          { id: 'help', label: 'Help' }
+        ]"
+        [(activeTab)]="activeTab"
+        [orientation]="'vertical'"
+        [variant]="'underline'"
+        [size]="'lg'"
+        (tabClosed)="handleTabClose($event)"
+      >
+      <div tab-content>
+        <div *ngIf="activeTab === 'overview'">
+          📄 Overview content
+          <div> Tabs can toggle this content right here. This is the default content </div>
+        </div>
+        <div *ngIf="activeTab === 'settings'">
+          ⚙️ Settings panel content
+          <div> Clicking on the second tab got you to this content right here. We have 3 adjustable properties on our tabs! You can set the size, the orientation and there are two designs; underlined or pill highlighted. </div>
+        </div>
+        <div *ngIf="activeTab === 'help'">
+          💡 Help and support content
+          <div> The third tab got you to this content right here. </div>
+        </div>
+      </div>
+      </app-tabs>
+      <h4>Pill SM Horizontal Tab</h4>
       <app-tabs
         [tabs]="[
           { id: 'overview', label: 'Overview', icon: '📄' },
@@ -52,8 +81,8 @@
         ]"
         [(activeTab)]="activeTab"
         [orientation]="'horizontal'"
-        [variant]="'underline'"
-        [size]="'md'"
+        [variant]="'pill'"
+        [size]="'sm'"
         (tabClosed)="handleTabClose($event)"
       ></app-tabs>
 
@@ -93,22 +122,28 @@
           </div>
 
           <div controls>
-            <app-switch
-              label="Pill Design"
-              [(checked)]="toPillVariant"
-              (checkedChange)="updateVariantFromToggle($event)"
-            ></app-switch>
-            <app-select
+            <div class="control">
+              <app-switch
+                label="Pill Design"
+                [(checked)]="toPillVariant"
+                (checkedChange)="updateVariantFromToggle($event)"
+              ></app-switch>
+            </div>
+            <div class="control">
+              <app-select
               label="Size"
               [options]="['sm', 'md', 'lg']"
               mode="radio"
               [(model)]="size"
-            ></app-select>
-            <app-switch
+              ></app-select>
+            </div>
+            <div class="control"> 
+              <app-switch
               label="Vertical"
               [(checked)]="toVertical"
               (checkedChange)="updateOrientationFromToggle($event)"
-            ></app-switch>
+              ></app-switch>
+            </div>
           </div>
         </app-playground>
 

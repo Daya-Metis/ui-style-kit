@@ -1,29 +1,30 @@
-<div
-  class="tabs-container"
-  [ngClass]="[orientation, size, variant]"
-  role="tablist"
->
-  <button
-    *ngFor="let tab of tabs; let i = index"
-    [class.active]="tab.id === activeTab"
-    (click)="selectTab(tab.id)"
-    (keydown)="onKeydown($event, i)"
-    [attr.aria-selected]="tab.id === activeTab"
-    class="tab-btn"
-    role="tab"
-    tabindex="0"
+<div class="tabs-wrapper" [ngClass]="orientation">
+  <div class="tabs-container"
+    [ngClass]="[orientation, size, variant]"
+    role="tablist"
   >
-    <span *ngIf="tab.icon" class="tab-icon">{{ tab.icon }}</span>
-    <span class="tab-label">{{ tab.label }}</span>
-    <span
-      *ngIf="tab.closeable"
-      class="tab-close"
-      (click)="closeTab(tab.id, $event)"
-      onkeypress="closeTab(tab.id, $event)"
-    >×</span>
-  </button>
-</div>
+    <button
+      *ngFor="let tab of tabs; let i = index"
+      [class.active]="tab.id === activeTab"
+      (click)="selectTab(tab.id)"
+      (keydown)="onKeydown($event, i)"
+      [attr.aria-selected]="tab.id === activeTab"
+      class="tab-btn"
+      role="tab"
+      tabindex="0"
+    >
+      <span *ngIf="tab.icon" class="tab-icon">{{ tab.icon }}</span>
+      <span class="tab-label">{{ tab.label }}</span>
+      <span
+        *ngIf="tab.closeable"
+        class="tab-close"
+        (click)="closeTab(tab.id, $event)"
+        onkeypress="closeTab(tab.id, $event)"
+      >×</span>
+    </button>
+  </div>
 
-<div class="tab-content">
-  <ng-content select="[tab-content]"></ng-content>
+  <div class="tab-content">
+    <ng-content select="[tab-content]"></ng-content>
+  </div>
 </div>
