@@ -13,12 +13,15 @@ export class ThemeService {
   }
 
   syncWithComputedTheme() {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  
     const root = getComputedStyle(document.documentElement);
     const tokens = ['primary', 'secondary', 'bg-color', 'text-color', 'accent', 'bg-container'];
     tokens.forEach(token => {
       const value = root.getPropertyValue(`--${token}`).trim();
       this.colors[token] = value;
     });
+  
     this.colorSubject.next({ ...this.colors });
   }
 
