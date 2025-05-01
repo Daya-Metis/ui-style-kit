@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ButtonComponent } from '@atoms/button/button.component';
-import { InputComponent } from '@atoms/input/input.component';
 import { TypographySpacingComponent } from '../typography-spacing/typography-spacing.component';
 import { ContentTableComponent } from '@organisms/content-table/content-table.component';
 
@@ -10,8 +8,6 @@ import { ContentTableComponent } from '@organisms/content-table/content-table.co
   standalone: true,
   imports: [
     CommonModule,
-    ButtonComponent,
-    InputComponent,
     TypographySpacingComponent,
     ContentTableComponent
   ],

@@ -44,9 +44,77 @@
 
     <section id="tabs">
       <h3>Tabs</h3>
-      <!-- TODO: TabsComponent -->
-       <hr>
+      <app-tabs
+        [tabs]="[
+          { id: 'overview', label: 'Overview', icon: '📄' },
+          { id: 'settings', label: 'Settings', icon: '⚙️', closeable: true },
+          { id: 'help', label: 'Help' }
+        ]"
+        [(activeTab)]="activeTab"
+        [orientation]="'horizontal'"
+        [variant]="'underline'"
+        [size]="'md'"
+        (tabClosed)="handleTabClose($event)"
+      ></app-tabs>
+
+      <div tab-content>
+        <div *ngIf="activeTab === 'overview'">
+          📄 Overview content
+          <div> Tabs can toggle this content right here. This is the default content </div>
+        </div>
+        <div *ngIf="activeTab === 'settings'">
+          ⚙️ Settings panel content
+          <div> Clicking on the second tab got you to this content right here. We have 3 adjustable properties on our tabs! You can set the size, the orientation and there are two designs; underlined or pill highlighted. </div>
+        </div>
+        <div *ngIf="activeTab === 'help'">
+          💡 Help and support content
+          <div> The third tab got you to this content right here. </div>
+        </div>
+      </div>
+
+        <app-playground
+          title="Tabs"
+          [code]="tabMarkup"
+        >
+          <div preview>
+            <app-tabs
+              [tabs]="tabOptions"
+              [(activeTab)]="activeTab"
+              [orientation]="orientation"
+              [variant]="variant"
+              [size]="size"
+            ></app-tabs>
+
+            <div tab-content style="padding: var(--spacing-md)">
+              <div *ngIf="activeTab === 'overview'">📄 Overview content</div>
+              <div *ngIf="activeTab === 'settings'">⚙️ Settings panel</div>
+              <div *ngIf="activeTab === 'help'">💡 Help and support</div>
+            </div>
+          </div>
+
+          <div controls>
+            <app-switch
+              label="Pill Design"
+              [(checked)]="toPillVariant"
+              (checkedChange)="updateVariantFromToggle($event)"
+            ></app-switch>
+            <app-select
+              label="Size"
+              [options]="['sm', 'md', 'lg']"
+              mode="radio"
+              [(model)]="size"
+            ></app-select>
+            <app-switch
+              label="Vertical"
+              [(checked)]="toVertical"
+              (checkedChange)="updateOrientationFromToggle($event)"
+            ></app-switch>
+          </div>
+        </app-playground>
+
     </section>
+
+    <hr>
 
     <section id="toast">
       <h3>Toast</h3>
