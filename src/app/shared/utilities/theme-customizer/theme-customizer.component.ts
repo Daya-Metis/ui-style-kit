@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '@atoms/button/button.component';
 import { InputComponent } from '@atoms/input/input.component';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-theme-customizer',
@@ -12,53 +13,27 @@ import { InputComponent } from '@atoms/input/input.component';
   styleUrls: ['./theme-customizer.component.scss']
 })
 export class ThemeCustomizerComponent {
-  customVars: { [key: string]: string } = {
-    '--primary': '#007bff',
-    '--secondary': '#6c757d',
-    '--bg-color': '#ffffff',
-    '--text-color': '#1e1e1e',
-    '--bg-container': '#f5f5f5',
-    '--accent': '#ffc107'
-  };  
+
+  customVars: { [key: string]: string } = {};  
   baseColor: string = '#007bff';
 
+  constructor(public themeService: ThemeService) {}
+  
   ngOnInit() {
-    Object.entries(this.customVars).forEach(([key, _]) => {
-      const saved = localStorage.getItem(key);
-      if (saved) {
-        document.documentElement.style.setProperty(key, saved);
-        this.customVars[key] = saved;
-      }
+    this.themeService.syncWithComputedTheme();
+    this.customVars = this.themeService.getAllColors();
+  
+    this.baseColor = this.themeService.getColor('primary');
+
+    this.themeService.colorChanges$.subscribe(updated => {
+      this.customVars = updated;
     });
   }
 
   resetTheme() {
-    for (const key in this.customVars) {
-      const value = this.customVars[key as keyof typeof this.customVars];
-      document.documentElement.style.setProperty(key, value);
-      localStorage.removeItem(key);
-    }
-    this.customVars = { ...this.customVars };
-
+    this.themeService.syncWithComputedTheme();
     location.reload();
   }
-  
-  updateVar(key: string, event: Event | string) {
-    const value = typeof event === 'string'
-      ? event
-      : (event.target as HTMLInputElement).value;
-  
-    this.customVars[key] = value;
-    document.documentElement.style.setProperty(key, value);
-    localStorage.setItem(key, value);
-  }
-  
-  getValue(key: string): string {
-    return this.customVars[key] || '#000000';
-  }  
-  getInputValue(event: Event): string {
-    return (event.target as HTMLInputElement)?.value || '';
-  }  
 
   generateTheme() {
     const primary = this.baseColor;
@@ -69,19 +44,17 @@ export class ThemeCustomizerComponent {
     const bgContainer = this.isDark(primary) ? '#2c2c2c' : '#f5f5f5';
   
     const themeVars = {
-      '--primary': primary,
-      '--secondary': secondary,
-      '--accent': accent,
-      '--text-color': textColor,
-      '--bg-color': bgColor,
-      '--bg-container': bgContainer
+      'primary': primary,
+      'secondary': secondary,
+      'accent': accent,
+      'text-color': textColor,
+      'bg-color': bgColor,
+      'bg-container': bgContainer
     };
     
     Object.entries(themeVars).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(key, value);
-      localStorage.setItem(key, value);
+      this.themeService.setColor(key, value)
     });
-    this.customVars = { ...themeVars };
   }
 
   isDark(color: string): boolean {
@@ -106,7 +79,5 @@ export class ThemeCustomizerComponent {
         .join('')
     );
   }
-  
-
 }
 

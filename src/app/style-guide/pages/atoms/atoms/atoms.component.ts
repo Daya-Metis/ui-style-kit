@@ -10,6 +10,7 @@ import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
 import { RadioComponent } from '@atoms/radio/radio.component';
 import { ArrowComponent } from '@atoms/arrow/arrow.component';
 import { ContentTableComponent } from '@organisms/content-table/content-table.component';
+import { ThemeService } from 'app/shared/utilities/services/theme.service';
 
 @Component({
   selector: 'app-atoms',
@@ -30,6 +31,7 @@ import { ContentTableComponent } from '@organisms/content-table/content-table.co
   styleUrls: ['./atoms.component.scss']
 })
 export class AtomsComponent {
+
   variant: 'default' | 'icon' | 'icon-label' | 'grow' = 'default';
   type: 'primary' | 'secondary' = 'secondary';
   isPrimary = false;
@@ -42,10 +44,20 @@ export class AtomsComponent {
 
   label = 'Click Me';
   icon = '👍';
-  colors = {
-    primary: '#007bff',
-    secondary: '#6c757d'
-  };
+
+  colors: { [key: string]: string } = {};
+  constructor(public themeService: ThemeService) {}
+  
+  ngOnInit() {
+    this.themeService.syncWithComputedTheme();
+  
+    this.colors = this.themeService.getAllColors();
+  
+    this.themeService.colorChanges$.subscribe(updated => {
+      this.colors = updated;
+    });
+  }
+  
 
   updateTypeFromToggle(checked: boolean) {
     this.isPrimary = checked;
@@ -56,13 +68,6 @@ export class AtomsComponent {
     this.toLeft = checked;
     this.growDirection = checked ? 'left' : 'right';
   }
-  
-  updateColorFromInput(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const value = input.value;
-    this.colors[this.type] = value;
-    document.documentElement.style.setProperty(`--${this.type}`, value);
-  }  
 
   get buttonMarkup(): string {
     const parts: string[] = [];

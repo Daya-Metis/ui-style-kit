@@ -16,29 +16,29 @@
 <app-input
 label="Primary Color"
 type="color"
-[(ngModel)]="customVars['--primary']"
-(input)="updateVar('--primary', getInputValue($event))"
+[(ngModel)]="customVars['primary']"
+(ngModelChange)="themeService.setColor('primary', $event)"
 ></app-input>
 
 <app-input
 label="Secondary Color"
 type="color"
-[(ngModel)]="customVars['--secondary']"
-(input)="updateVar('--secondary', getInputValue($event))"
+[(ngModel)]="customVars['secondary']"
+(ngModelChange)="themeService.setColor('secondary', $event)"
 ></app-input>
 
 <app-input
 label="Background"
 type="color"
-[(ngModel)]="customVars['--bg-color']"
-(input)="updateVar('--bg-color', getInputValue($event))"
+[(ngModel)]="customVars['bg-color']"
+(ngModelChange)="themeService.setColor('bg-color', $event)"
 ></app-input>
 
 <app-input
 label="Text"
 type="color"
-[(ngModel)]="customVars['--text-color']"
-(input)="updateVar('--text-color', getInputValue($event))"
+[(ngModel)]="customVars['text-color']"
+(ngModelChange)="themeService.setColor('text-color', $event)"
 ></app-input>
 
 </section>
@@ -48,15 +48,15 @@ type="color"
   <app-input
     label="Background Container"
     type="color"
-    [(ngModel)]="customVars['--bg-container']"
-    (input)="updateVar('--bg-container', getInputValue($event))"
+    [(ngModel)]="customVars['bg-container']"
+    (ngModelChange)="themeService.setColor('bg-container', $event)"
   ></app-input>
 
   <app-input
     label="Accent Color"
     type="color"
-    [(ngModel)]="customVars['--accent']"
-    (input)="updateVar('--accent', getInputValue($event))"
+    [(ngModel)]="customVars['accent']"
+    (ngModelChange)="themeService.setColor('accent', $event)"
   ></app-input>
 </section>
 

@@ -106,7 +106,7 @@
             label="{{ type | titlecase }} Color"
             type="color"
             [(ngModel)]="colors[type]"
-            (input)="updateColorFromInput($event)"
+            (ngModelChange)="themeService.setColor(type, $event)"
             ></app-input>
           </div>
         </div>
