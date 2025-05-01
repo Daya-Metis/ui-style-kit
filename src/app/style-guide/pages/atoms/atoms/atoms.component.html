@@ -18,10 +18,10 @@
 
   <main class="main-content">
 
-    <h2>Atoms</h2>
+    <h1>Atoms</h1>
 
     <section id="button-section">
-      <h3>Button</h3>
+      <h2>Button</h2>
       <app-button label="Primary" type="primary"></app-button>
       <app-button label="Secondary" type="secondary"></app-button>
       <app-button icon="🗑" variant="icon"></app-button>
@@ -114,7 +114,7 @@
     </section>
 
     <section id="input-section">
-      <h3>Input</h3>
+      <h2>Input</h2>
       <div>
         <app-input label="Name" placeholder="Your name"></app-input>
       </div>
@@ -141,7 +141,7 @@
     </section>
 
     <section class="arrow-section">
-      <h3>Arrow</h3>
+      <h2>Arrow</h2>
       <span>Default: 100% right</span><app-arrow></app-arrow>
       <span>200% left</span><app-arrow direction="left" [scale]="2"></app-arrow>
       <span>80% up</span><app-arrow direction="up" [scale]="0.8"></app-arrow>
@@ -149,7 +149,7 @@
     </section>
 
     <section id="checks-section">
-      <h3>Checkbox & Radio</h3>
+      <h2>Checkbox & Radio</h2>
       <app-checkbox label="Accept Terms" [(checked)]="checkboxState"></app-checkbox>
       <app-checkbox label="Accept Terms" (checked)="true"></app-checkbox>
       <app-radio label="Primary Option" value="primary" [(model)]="radioSelection"></app-radio>
@@ -157,17 +157,17 @@
     </section>
 
     <section id="search-section">
-      <h3>Searchbar</h3>
+      <h2>Searchbar</h2>
       <app-input label="Search" placeholder="Type to search..." [(ngModel)]="searchQuery"></app-input>
     </section>
 
     <section id="switch-section">
-      <h3>Switch</h3>
+      <h2>Switch</h2>
       <app-switch label="Enable Notifications" [(checked)]="switchState"></app-switch>
     </section>
 
     <section id="tooltip-section">
-      <h3>Tooltip</h3>
+      <h2>Tooltip</h2>
       <!-- Placeholder, real tooltip needs structure -->
       <app-button label="Hover me" tooltip="I'm a tooltip!"></app-button>
     </section>

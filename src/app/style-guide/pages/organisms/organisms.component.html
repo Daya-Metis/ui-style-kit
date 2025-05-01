@@ -17,16 +17,17 @@
 
   <main class="main-content">
         
-    <h2>🧠 Organisms</h2>
+    <h1>🧠 Organisms</h1>
 
     <section id="upload">
-      <h3>File Upload</h3>
+      <h2>File Upload</h2>
       <app-upload-demo></app-upload-demo>
-      <hr>
     </section>
 
+    <hr>
+
     <section id="modal">
-      <h3>Modal</h3>
+      <h2>Modal</h2>
       <app-button (click)="showModal = true" onkeypress="showModal" label="Open Modal"></app-button>
 
     <app-modal [show]="showModal" (close)="showModal = false">
@@ -39,12 +40,13 @@
         <button>Save</button>
       </div>
     </app-modal>
-    <hr>
     </section>
 
+    <hr>
+
     <section id="tabs">
-      <h3>Tabs</h3>
-      <h4>Underline LG Vertical Tab</h4>
+      <h2>Tabs</h2>
+      <h3>Underline LG Vertical Tab</h3>
       <app-tabs
         [tabs]="[
           { id: 'overview', label: 'Overview', icon: '📄' },
@@ -72,7 +74,7 @@
         </div>
       </div>
       </app-tabs>
-      <h4>Pill SM Horizontal Tab</h4>
+      <h3>Pill SM Horizontal Tab</h3>
       <app-tabs
         [tabs]="[
           { id: 'overview', label: 'Overview', icon: '📄' },
@@ -84,22 +86,22 @@
         [variant]="'pill'"
         [size]="'sm'"
         (tabClosed)="handleTabClose($event)"
-      ></app-tabs>
-
-      <div tab-content>
-        <div *ngIf="activeTab === 'overview'">
-          📄 Overview content
-          <div> Tabs can toggle this content right here. This is the default content </div>
+      >
+        <div tab-content>
+          <div *ngIf="activeTab === 'overview'">
+            📄 Overview content
+            <div> Tabs can toggle this content right here. This is the default content </div>
+          </div>
+          <div *ngIf="activeTab === 'settings'">
+            ⚙️ Settings panel content
+            <div> Clicking on the second tab got you to this content right here. We have 3 adjustable properties on our tabs! You can set the size, the orientation and there are two designs; underlined or pill highlighted. </div>
+          </div>
+          <div *ngIf="activeTab === 'help'">
+            💡 Help and support content
+            <div> The third tab got you to this content right here. </div>
+          </div>
         </div>
-        <div *ngIf="activeTab === 'settings'">
-          ⚙️ Settings panel content
-          <div> Clicking on the second tab got you to this content right here. We have 3 adjustable properties on our tabs! You can set the size, the orientation and there are two designs; underlined or pill highlighted. </div>
-        </div>
-        <div *ngIf="activeTab === 'help'">
-          💡 Help and support content
-          <div> The third tab got you to this content right here. </div>
-        </div>
-      </div>
+      </app-tabs>
 
         <app-playground
           title="Tabs"
@@ -112,13 +114,15 @@
               [orientation]="orientation"
               [variant]="variant"
               [size]="size"
-            ></app-tabs>
-
+            >
+          
             <div tab-content style="padding: var(--spacing-md)">
               <div *ngIf="activeTab === 'overview'">📄 Overview content</div>
               <div *ngIf="activeTab === 'settings'">⚙️ Settings panel</div>
               <div *ngIf="activeTab === 'help'">💡 Help and support</div>
             </div>
+
+            </app-tabs>
           </div>
 
           <div controls>
@@ -146,13 +150,12 @@
             </div>
           </div>
         </app-playground>
-
     </section>
 
     <hr>
 
     <section id="toast">
-      <h3>Toast</h3>
+      <h2>Toast</h2>
       <!-- TODO: ToastComponent -->
     </section>
   </main>

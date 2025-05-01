@@ -1,14 +1,12 @@
-<h2>Upload Demo</h2>
-
 <app-file-upload (fileDropped)="handleFile($event)"></app-file-upload>
-<h2>With Label</h2>
+<h3>With Label</h3>
 <app-file-upload
   (fileDropped)="handleFile($event)"
   [label]="'Maximum size: 2MB'"
   [maxSizeMB]="2"
 ></app-file-upload>
 
-<h2>Multiple Files</h2>
+<h3>Multiple Files</h3>
 <app-file-upload
   [multiple]="true"
   [maxSizeMB]="5"
