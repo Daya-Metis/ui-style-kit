@@ -28,13 +28,19 @@
 .playground-preview {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   min-height: 120px;
+  width: 100%;
   background: var(--bg-color);
   border-radius: var(--radius);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-sm);
+  overflow: auto;
+}
+
+.playground-preview > * {
+  max-width: 100%;
 }
 
 .playground-controls {

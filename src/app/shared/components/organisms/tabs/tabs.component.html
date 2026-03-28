@@ -11,15 +11,18 @@
       [attr.aria-selected]="tab.id === activeTab"
       class="tab-btn"
       role="tab"
-      tabindex="0"
+      [attr.tabindex]="tab.id === activeTab ? 0 : -1"
     >
       <span *ngIf="tab.icon" class="tab-icon">{{ tab.icon }}</span>
       <span class="tab-label">{{ tab.label }}</span>
       <span
         *ngIf="tab.closeable"
+        role="button"
+        tabindex="0"
         class="tab-close"
         (click)="closeTab(tab.id, $event)"
-        onkeypress="closeTab(tab.id, $event)"
+        (keydown.enter)="closeTab(tab.id, $event)"
+        (keydown.space)="closeTab(tab.id, $event)"
       >×</span>
     </button>
   </div>

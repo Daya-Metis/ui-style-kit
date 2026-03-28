@@ -2,85 +2,135 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  width: 100%;
 
   &.vertical {
     flex-direction: row;
+    align-items: flex-start;
 
     .tabs-container {
       flex-direction: column;
       border-bottom: none;
       border-right: 1px solid var(--border-color);
+      padding-right: var(--spacing-xs);
     }
 
     .tab-content {
-      padding-left: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+      padding-top: 0;
       flex: 1;
     }
   }
 }
 
 .tabs-container {
-    display: flex;
-    flex-wrap: nowrap;
-    border-bottom: 1px solid var(--border-color, #ddd);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color, #ddd);
+  gap: var(--spacing-xs);
+
+  .tab-btn {
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 2.75rem;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-color);
+    border-radius: var(--radius) var(--radius) 0 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: var(--spacing-xs);
-  
-    .tab-btn {
-      background: none;
-      border: none;
-      padding: var(--spacing-sm) var(--spacing-md);
+    flex: 0 0 auto;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus-border);
+      outline-offset: 2px;
+    }
+
+    &.active {
+      color: var(--primary);
+    }
+
+    .tab-close {
+      margin-left: var(--spacing-xs);
       cursor: pointer;
-      font-size: var(--font-size-sm);
-      color: var(--text-color);
-      border-radius: var(--radius);
-      display: flex;
+      color: currentColor;
+      font-weight: 700;
+      display: inline-flex;
       align-items: center;
-      gap: var(--spacing-xs);
-      transition: all 0.2s ease;
-  
-      &:hover {
-        background: var(--hover-bg);
-      }
-  
-      &.active {
-        font-weight: bold;
-        color: var(--primary);
-      }
-  
-      .tab-close {
-        margin-left: var(--spacing-xs);
-        cursor: pointer;
-        color: var(--text-color);
-        font-weight: bold;
-      }
-  
-      .tab-icon {
-        font-size: 1rem;
-      }
+      justify-content: center;
     }
-  
-    &.pill .tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-    }
-  
-    &.underline .tab-btn.active {
-      border-radius: 0;
-      border-bottom: 2px solid var(--primary);
-    }
-  
-    &.sm .tab-btn {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-    }
-  
-    &.lg .tab-btn {
+
+    .tab-icon {
       font-size: 1rem;
-      padding: 0.75rem 1.25rem;
+      line-height: 1;
     }
   }
-  
-  .tab-content {
-    padding-top: var(--spacing-md);
+
+  &.pill .tab-btn {
+    border-radius: 999px;
+    border-bottom-color: transparent;
   }
+
+  &.pill .tab-btn.active {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  &.underline .tab-btn.active {
+    border-radius: 0;
+    border-bottom-color: var(--primary);
+  }
+
+  &.vertical {
+    border-bottom: none;
+    border-right: 1px solid var(--border-color, #ddd);
+    width: auto;
+
+    .tab-btn {
+      width: 100%;
+      justify-content: flex-start;
+      border-right: 2px solid transparent;
+      border-bottom: none;
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    &.underline .tab-btn.active {
+      border-right-color: var(--primary);
+      border-bottom-color: transparent;
+    }
+  }
+
+  &.sm .tab-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    min-height: 2.25rem;
+  }
+
+  &.lg .tab-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    min-height: 3.25rem;
+  }
+  }
+  
+.tab-content {
+  min-width: 0;
+  width: 100%;
+  min-height: 7rem;
+  padding-top: var(--spacing-md);
+}
   
