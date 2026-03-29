@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadioComponent } from '@atoms/radio/radio.component';
 import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
@@ -12,6 +12,8 @@ import { ArrowComponent } from '@atoms/arrow/arrow.component';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
+  constructor(private readonly elementRef: ElementRef<HTMLElement>) {}
+
   @Input() label = '';
   @Input() options: string[] = [];
 
@@ -23,6 +25,10 @@ export class SelectComponent {
 
   toggleOpen() {
     this.open = !this.open;
+  }
+
+  close() {
+    this.open = false;
   }
   
   get displayValue(): string {
@@ -37,6 +43,7 @@ export class SelectComponent {
   
     const current = this.model as string;
     this.modelChange.emit(current === value ? '' : value);
+    this.close();
   }
   
   updateCheckboxMulti(value: string | string[]) {
@@ -55,6 +62,7 @@ export class SelectComponent {
 
   updateRadio(value: string) {
     this.modelChange.emit(value);
+    this.close();
   }
 
   isChecked(value: string): boolean {
@@ -82,5 +90,13 @@ export class SelectComponent {
   get modelArray(): string[] {
     return this.model as string[];
   }
-  
+
+  @HostListener('document:click', ['$event.target'])
+  onDocumentClick(target: EventTarget | null) {
+    if (!target || !this.open) return;
+
+    if (!this.elementRef.nativeElement.contains(target as Node)) {
+      this.close();
+    }
+  }
 }
