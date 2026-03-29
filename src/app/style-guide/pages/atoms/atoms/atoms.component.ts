@@ -9,6 +9,8 @@ import { SelectComponent } from '@molecules/select/select.component';
 import { CheckboxComponent } from '@atoms/checkbox/checkbox.component';
 import { RadioComponent } from '@atoms/radio/radio.component';
 import { ArrowComponent } from '@atoms/arrow/arrow.component';
+import { IconComponent } from '@atoms/icon/icon.component';
+import { IconControlComponent } from '@atoms/icon-control/icon-control.component';
 import { ContentTableComponent } from '@organisms/content-table/content-table.component';
 import { ThemeService } from 'app/shared/utilities/services/theme.service';
 
@@ -17,6 +19,8 @@ import { ThemeService } from 'app/shared/utilities/services/theme.service';
   standalone: true,
   imports: [
     ArrowComponent,
+    IconComponent,
+    IconControlComponent,
     ButtonComponent,
     CheckboxComponent,
     RadioComponent,
@@ -105,5 +109,4 @@ export class AtomsComponent {
     this.confettiActive = true;
     setTimeout(() => this.confettiActive = false, 1000); // 1 second
   }
-
 }

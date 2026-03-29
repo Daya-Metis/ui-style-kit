@@ -1,1 +1,11 @@
-<p>icon works!</p>
+<span class="icon" [ngClass]="[tone, size, name]">
+  <svg [attr.viewBox]="viewBox" fill="none" aria-hidden="true">
+    <path
+      [attr.d]="path"
+      pathLength="1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></path>
+    <circle *ngIf="name === 'info'" cx="10" cy="5.25" r="0.9"></circle>
+  </svg>
+</span>

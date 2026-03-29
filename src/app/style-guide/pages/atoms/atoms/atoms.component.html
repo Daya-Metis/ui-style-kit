@@ -7,6 +7,7 @@
             { id: 'try-buttons', label: 'Try Buttons!' },
             { id: 'input-section', label: 'Input' },
             { id: 'arrow-section', label: 'Arrows' },
+            { id: 'icon-section', label: 'Icons' },
             { id: 'checks-section', label: 'Checkbox & Radio' },
             { id: 'search-section', label: 'Searchbar' },
             { id: 'switch-section', label: 'Switch' },
@@ -146,6 +147,23 @@
       <span>200% left</span><app-arrow direction="left" [scale]="2"></app-arrow>
       <span>80% up</span><app-arrow direction="up" [scale]="0.8"></app-arrow>
       <span>150% down</span><app-arrow direction="down" [scale]="1.5"></app-arrow>
+    </section>
+
+    <section id="icon-section">
+      <h2>Icons & Utility Controls</h2>
+      <div class="icon-row">
+        <app-icon name="check" tone="success"></app-icon>
+        <app-icon name="info" tone="primary"></app-icon>
+        <app-icon name="warning" tone="warning"></app-icon>
+        <app-icon name="error" tone="error"></app-icon>
+      </div>
+
+      <div class="icon-row">
+        <app-icon-control icon="close" label="Dismiss"></app-icon-control>
+        <app-icon-control icon="info" tone="primary" shape="rounded" label="Info"></app-icon-control>
+        <app-icon-control icon="check" tone="success" label="Confirm"></app-icon-control>
+        <app-icon-control icon="error" tone="error" label="Remove"></app-icon-control>
+      </div>
     </section>
 
     <section id="checks-section">
