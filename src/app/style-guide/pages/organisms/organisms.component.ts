@@ -30,6 +30,8 @@ import { Component } from "@angular/core";
 })
 export class OrganismsComponent {
   showModal = false;
+  showToast = true;
+  toastVariant: 'info' | 'success' | 'warning' = 'success';
 
   openModal() {
     this.showModal = true;
@@ -76,6 +78,9 @@ export class OrganismsComponent {
     this.toVertical = checked;
     this.orientation = checked ? 'vertical' : 'horizontal';
   }
-}
 
+  reopenToast() {
+    this.showToast = true;
+  }
+}
 

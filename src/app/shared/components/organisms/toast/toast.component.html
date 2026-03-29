@@ -1,1 +1,27 @@
-<p>toast works!</p>
+<div class="toast" [ngClass]="variant" role="status" aria-live="polite">
+  <div class="toast-accent" aria-hidden="true"></div>
+
+  <div class="toast-body">
+    <strong class="toast-title">{{ title }}</strong>
+    <p class="toast-message">{{ message }}</p>
+  </div>
+
+  <div class="toast-actions">
+    <app-button
+      *ngIf="actionLabel"
+      [label]="actionLabel"
+      type="secondary"
+      (click)="handleAction()"
+    ></app-button>
+
+    <button
+      *ngIf="dismissible"
+      type="button"
+      class="toast-dismiss"
+      (click)="handleDismiss()"
+      aria-label="Dismiss toast"
+    >
+      ×
+    </button>
+  </div>
+</div>

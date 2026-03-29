@@ -1,0 +1,11 @@
+.toast-section {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.toast-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--spacing-md);
+}

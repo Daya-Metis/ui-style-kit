@@ -156,7 +156,31 @@
 
     <section id="toast">
       <h2>Toast</h2>
-      <!-- TODO: ToastComponent -->
+      <div class="toast-section">
+        <div class="toast-controls">
+          <app-select
+            label="Variant"
+            [options]="['info', 'success', 'warning']"
+            mode="radio"
+            [(model)]="toastVariant"
+          ></app-select>
+
+          <app-button
+            label="Show Toast"
+            type="secondary"
+            (click)="reopenToast()"
+          ></app-button>
+        </div>
+
+        <app-toast
+          *ngIf="showToast"
+          [variant]="toastVariant"
+          title="Booking updated"
+          message="Arrival details were saved and shared with the front-desk team."
+          actionLabel="Review"
+          (dismissed)="showToast = false"
+        ></app-toast>
+      </div>
     </section>
   </main>
 </div>
