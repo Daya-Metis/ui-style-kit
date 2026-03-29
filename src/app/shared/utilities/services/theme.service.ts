@@ -26,6 +26,8 @@ export class ThemeService {
       'bg-color',
       'text-color',
       'accent',
+      'success',
+      'error',
       'bg-container',
       'bg-elevated',
       'text-muted',

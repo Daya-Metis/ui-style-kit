@@ -39,6 +39,8 @@ export class ThemeCustomizerComponent {
     const primary = this.baseColor;
     const secondary = this.adjustColor(primary, 30);
     const accent = this.adjustColor(primary, -30);
+    const success = this.adjustColor(primary, -10);
+    const error = this.isDark(primary) ? '#ff7878' : '#d64545';
     const textColor = this.isDark(primary) ? '#ffffff' : '#1e1e1e';
     const bgColor = this.isDark(primary) ? '#1e1e1e' : '#ffffff';
     const bgContainer = this.isDark(primary) ? '#2c2c2c' : '#f5f5f5';
@@ -53,6 +55,8 @@ export class ThemeCustomizerComponent {
       'primary': primary,
       'secondary': secondary,
       'accent': accent,
+      'success': success,
+      'error': error,
       'text-color': textColor,
       'bg-color': bgColor,
       'bg-container': bgContainer,

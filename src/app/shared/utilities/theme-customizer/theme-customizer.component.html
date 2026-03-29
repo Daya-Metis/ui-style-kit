@@ -60,6 +60,20 @@ type="color"
   ></app-input>
 
   <app-input
+    label="Success Color"
+    type="color"
+    [(ngModel)]="customVars['success']"
+    (ngModelChange)="themeService.setColor('success', $event)"
+  ></app-input>
+
+  <app-input
+    label="Error Color"
+    type="color"
+    [(ngModel)]="customVars['error']"
+    (ngModelChange)="themeService.setColor('error', $event)"
+  ></app-input>
+
+  <app-input
     label="Elevated Surface"
     type="color"
     [(ngModel)]="customVars['bg-elevated']"
