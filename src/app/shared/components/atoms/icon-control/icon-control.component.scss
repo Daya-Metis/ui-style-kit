@@ -1,0 +1,46 @@
+.icon-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.icon-control.circle,
+.icon-control.rounded {
+  background: color-mix(in srgb, var(--text-color) 4%, transparent);
+}
+
+.icon-control.rounded {
+  border-radius: var(--radius);
+}
+
+.icon-control.plain {
+  width: auto;
+  height: auto;
+}
+
+.icon-control:hover {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  color: var(--text-color);
+}
+
+.icon-control:focus-visible {
+  outline: 2px solid var(--focus-border);
+  outline-offset: 2px;
+}
+
+.icon-control.success:hover {
+  background: color-mix(in srgb, var(--success) 14%, transparent);
+}
+
+.icon-control.error:hover {
+  background: color-mix(in srgb, var(--error) 14%, transparent);
+}
