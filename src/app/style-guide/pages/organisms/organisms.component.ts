@@ -31,7 +31,7 @@ import { Component } from "@angular/core";
 export class OrganismsComponent {
   showModal = false;
   showToast = true;
-  toastVariant: 'info' | 'success' | 'warning' = 'success';
+  toastVariant: 'info' | 'success' | 'warning' | 'error' = 'success';
 
   openModal() {
     this.showModal = true;
@@ -83,4 +83,3 @@ export class OrganismsComponent {
     this.showToast = true;
   }
 }
-

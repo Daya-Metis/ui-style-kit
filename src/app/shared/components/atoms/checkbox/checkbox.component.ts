@@ -23,13 +23,20 @@ export class CheckboxComponent {
         ? this.model.filter(v => v !== this.value)
         : [...this.model, this.value];
       this.modelChange.emit(updated);
-    } else {
+    } else if (this.value) {
       const newValue = this.model === this.value ? '' : this.value;
       this.modelChange.emit(newValue);
+    } else {
+      this.checked = !this.checked;
+      this.checkedChange.emit(this.checked);
     }
   }
 
   get isChecked(): boolean {
+    if (!this.value && typeof this.model === 'string' && this.model === '') {
+      return this.checked;
+    }
+
     return Array.isArray(this.model)
       ? this.model.includes(this.value)
       : this.model === this.value;
