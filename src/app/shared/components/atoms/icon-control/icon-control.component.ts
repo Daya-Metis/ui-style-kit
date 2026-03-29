@@ -10,11 +10,41 @@ import { IconComponent } from '@atoms/icon/icon.component';
   styleUrl: './icon-control.component.scss'
 })
 export class IconControlComponent {
-  @Input() icon: 'close' | 'info' | 'warning' | 'check' | 'error' = 'close';
-  @Input() tone: 'neutral' | 'primary' | 'success' | 'warning' | 'error' = 'neutral';
+  @Input() variant: 'close' | 'info' | 'warning' | 'success' | 'error' = 'close';
   @Input() label = 'Action';
   @Input() shape: 'circle' | 'rounded' | 'plain' = 'circle';
+  @Input() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
   @Output() pressed = new EventEmitter<void>();
+
+  get icon(): 'close' | 'info' | 'warning' | 'check' | 'error' {
+    switch (this.variant) {
+      case 'success':
+        return 'check';
+      case 'warning':
+        return 'warning';
+      case 'error':
+        return 'error';
+      case 'info':
+        return 'info';
+      default:
+        return 'close';
+    }
+  }
+
+  get tone(): 'neutral' | 'primary' | 'success' | 'warning' | 'error' {
+    switch (this.variant) {
+      case 'success':
+        return 'success';
+      case 'warning':
+        return 'warning';
+      case 'error':
+        return 'error';
+      case 'info':
+        return 'primary';
+      default:
+        return 'neutral';
+    }
+  }
 
   handlePress() {
     this.pressed.emit();

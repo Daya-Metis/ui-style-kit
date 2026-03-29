@@ -159,17 +159,60 @@
       </div>
 
       <div class="icon-row">
-        <app-icon-control icon="close" label="Dismiss"></app-icon-control>
-        <app-icon-control icon="info" tone="primary" shape="rounded" label="Info"></app-icon-control>
-        <app-icon-control icon="check" tone="success" label="Confirm"></app-icon-control>
-        <app-icon-control icon="error" tone="error" label="Remove"></app-icon-control>
+        <app-icon-control variant="close" label="Dismiss"></app-icon-control>
+        <app-icon-control variant="info" shape="rounded" label="Info"></app-icon-control>
+        <app-icon-control variant="success" label="Confirm"></app-icon-control>
+        <app-icon-control variant="error" label="Remove"></app-icon-control>
       </div>
+
+      <app-playground
+        title="Icon Control"
+        [code]="iconControlMarkup"
+      >
+        <div preview>
+          <app-icon-control
+            [variant]="iconControlVariant"
+            [shape]="iconControlShape"
+            [size]="iconControlSize"
+            label="Utility action"
+          ></app-icon-control>
+        </div>
+
+        <div controls>
+          <div class="control">
+            <app-select
+              label="Variant"
+              [options]="['close', 'info', 'warning', 'success', 'error']"
+              mode="radio"
+              [(model)]="iconControlVariant"
+            ></app-select>
+          </div>
+
+          <div class="control">
+            <app-select
+              label="Shape"
+              [options]="['circle', 'rounded', 'plain']"
+              mode="radio"
+              [(model)]="iconControlShape"
+            ></app-select>
+          </div>
+
+          <div class="control">
+            <app-select
+              label="Size"
+              [options]="['sm', 'md', 'lg', 'xl']"
+              mode="radio"
+              [(model)]="iconControlSize"
+            ></app-select>
+          </div>
+        </div>
+      </app-playground>
     </section>
 
     <section id="checks-section">
       <h2>Checkbox & Radio</h2>
       <app-checkbox label="Accept Terms" [(checked)]="checkboxState"></app-checkbox>
-      <app-checkbox label="Accept Terms" (checked)="true"></app-checkbox>
+      <app-checkbox label="Subscribe to Updates" [checked]="true"></app-checkbox>
       <app-radio label="Primary Option" value="primary" [(model)]="radioSelection"></app-radio>
       <app-radio label="Secondary Option" value="secondary" [(model)]="radioSelection"></app-radio>
     </section>

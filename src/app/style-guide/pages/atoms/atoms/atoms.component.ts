@@ -45,6 +45,9 @@ export class AtomsComponent {
   switchState = true;
   growDirection : 'left' | 'right' = 'right';
   toLeft = false;
+  iconControlVariant: 'close' | 'info' | 'warning' | 'success' | 'error' = 'close';
+  iconControlShape: 'circle' | 'rounded' | 'plain' = 'circle';
+  iconControlSize: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
   label = 'Click Me';
   icon = '👍';
@@ -96,6 +99,19 @@ export class AtomsComponent {
   
     parts.push(`></app-button>`);
   
+    return parts.join('');
+  }
+
+  get iconControlMarkup(): string {
+    const parts = [
+      '<app-icon-control',
+      ` variant="${this.iconControlVariant}"`,
+      ` shape="${this.iconControlShape}"`,
+      ` size="${this.iconControlSize}"`,
+      ' label="Utility action"',
+      '></app-icon-control>'
+    ];
+
     return parts.join('');
   }
   

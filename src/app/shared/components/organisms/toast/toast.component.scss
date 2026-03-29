@@ -1,8 +1,7 @@
 .toast {
-  display: grid;
-  grid-template-columns: 0.35rem minmax(0, 1fr) auto;
+  display: flex;
   gap: var(--spacing-md);
-  align-items: start;
+  align-items: flex-start;
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
@@ -11,28 +10,64 @@
 }
 
 .toast-accent {
-  height: 100%;
+  align-self: stretch;
+  width: 0.35rem;
   min-height: 100%;
   border-radius: 999px;
   background: var(--primary);
+  flex: 0 0 auto;
 }
 
 .toast.success .toast-accent {
-  background: color-mix(in srgb, var(--primary) 70%, #18a957);
+  background: var(--success);
 }
 
 .toast.warning .toast-accent {
-  background: color-mix(in srgb, var(--accent) 70%, #e38b00);
+  background: var(--accent);
+}
+
+.toast.error .toast-accent {
+  background: var(--error);
+}
+
+.toast-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.toast-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-color) 4%, transparent);
+  flex: 0 0 auto;
+}
+
+.toast.success .toast-state {
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+}
+
+.toast.warning .toast-state {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.toast.error .toast-state {
+  background: color-mix(in srgb, var(--error) 12%, transparent);
 }
 
 .toast-body {
   min-width: 0;
+  padding-top: 0.125rem;
 }
 
 .toast-title {
   display: block;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 0.125rem;
   font-size: var(--font-size-md);
+  line-height: 1.3;
 }
 
 .toast-message {
@@ -41,22 +76,26 @@
   line-height: 1.5;
 }
 
-.toast-actions {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-}
-
-.toast-dismiss {
+.toast-action {
+  margin-top: var(--spacing-sm);
+  padding: 0;
   border: none;
   background: transparent;
-  color: var(--text-muted);
-  font-size: 1.5rem;
-  line-height: 1;
-  padding: 0;
+  color: var(--primary);
+  font: inherit;
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
 }
 
-.toast-dismiss:hover {
-  color: var(--text-color);
+.toast-action:hover {
+  text-decoration: underline;
+}
+
+.toast-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding-top: 0;
 }

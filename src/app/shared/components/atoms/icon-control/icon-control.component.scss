@@ -13,6 +13,26 @@
   transition: var(--transition);
 }
 
+.icon-control.sm {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.icon-control.md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-control.lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.icon-control.xl {
+  width: 3rem;
+  height: 3rem;
+}
+
 .icon-control.circle,
 .icon-control.rounded {
   background: color-mix(in srgb, var(--text-color) 4%, transparent);
@@ -25,6 +45,15 @@
 .icon-control.plain {
   width: auto;
   height: auto;
+  padding: var(--spacing-xs);
+}
+
+.icon-control.plain.lg {
+  padding: var(--spacing-sm);
+}
+
+.icon-control.plain.xl {
+  padding: calc(var(--spacing-sm) + var(--spacing-xs));
 }
 
 .icon-control:hover {

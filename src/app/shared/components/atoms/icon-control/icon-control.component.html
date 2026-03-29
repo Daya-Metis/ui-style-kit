@@ -1,9 +1,9 @@
 <button
   type="button"
   class="icon-control"
-  [ngClass]="[tone, shape]"
+  [ngClass]="[tone, shape, size]"
   [attr.aria-label]="label"
   (click)="handlePress()"
 >
-  <app-icon [name]="icon" [tone]="tone"></app-icon>
+  <app-icon [name]="icon" [tone]="tone" [size]="size === 'xl' ? 'lg' : size === 'lg' ? 'lg' : size === 'sm' ? 'sm' : 'md'"></app-icon>
 </button>
