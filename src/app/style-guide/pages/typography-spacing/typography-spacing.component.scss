@@ -1,5 +1,64 @@
 :host {
-    display: block;
-    padding: var(--spacing-lg);
+  display: block;
 }
-  
+
+.type-section {
+  padding: 0;
+}
+
+.type-section h3 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+.type-copy {
+  max-width: 42rem;
+  margin: var(--spacing-sm) 0 var(--spacing-lg);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.type-swatch {
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-xs);
+}
+
+.type-token {
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+  font-family: monospace;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.type-swatch p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.type-sm {
+  font-size: var(--font-size-sm);
+}
+
+.type-md {
+  font-size: var(--font-size-md);
+}
+
+.type-lg {
+  font-size: var(--font-size-lg);
+}
+
+@media (max-width: 768px) {
+  .type-grid {
+    grid-template-columns: 1fr;
+  }
+}

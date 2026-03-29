@@ -6,15 +6,15 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(var(--spacing-lg), 4vw, var(--spacing-xl));
   min-height: 34rem;
-  padding: clamp(1.5rem, 3vw, 3rem);
-  border-radius: 2rem;
+  padding: clamp(var(--spacing-lg), 3vw, var(--spacing-xl));
+  border-radius: var(--radius-xl);
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(8, 16, 26, 0.18), rgba(8, 16, 26, 0.5)),
     linear-gradient(135deg, #89a9c5 0%, #6b94b7 32%, #456887 52%, #e8d2b4 52%, #dcb88e 100%);
-  color: white;
+  color: var(--on-primary);
 }
 
 .hero-overlay {
@@ -34,11 +34,7 @@
 
 .hero-tag,
 .section-tag {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.74rem;
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .example-copy h1,
@@ -51,7 +47,7 @@
 
 .example-copy p {
   max-width: 44ch;
-  font-size: 1.02rem;
+  font-size: var(--font-size-md);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.88);
 }
@@ -59,19 +55,19 @@
 .example-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
 }
 
 .hero-details {
   align-self: end;
   display: grid;
-  gap: 0.9rem;
+  gap: var(--spacing-md);
 }
 
 .detail-block {
-  padding: 1rem 1.1rem;
-  border-radius: 1.25rem;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -89,16 +85,16 @@
 .detail-block strong,
 .summary-item strong {
   display: block;
-  margin-top: 0.35rem;
-  font-size: 1rem;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-md);
 }
 
 .example-section {
-  margin-top: 3rem;
+  margin-top: var(--spacing-xl);
 }
 
 .section-intro {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .section-intro h2,
@@ -107,19 +103,19 @@
 }
 
 .stay-panel {
-  padding-top: 1rem;
+  padding-top: var(--spacing-md);
 }
 
 .stay-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.85fr);
-  gap: 1.5rem;
+  gap: var(--spacing-lg);
   align-items: center;
 }
 
 .stay-visual {
   min-height: 19rem;
-  border-radius: 1.5rem;
+  border-radius: var(--radius-xl);
   background-size: cover;
 }
 
@@ -153,33 +149,33 @@
 }
 
 .stay-copy p {
-  margin: 0.75rem 0 0;
+  margin: var(--spacing-sm) 0 0;
   line-height: 1.65;
-  color: color-mix(in srgb, var(--text-color) 72%, white);
+  color: var(--text-muted);
 }
 
 .ritual-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 
 .booking-band {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1.5rem;
+  gap: var(--spacing-lg);
   align-items: end;
-  margin-top: 3rem;
-  padding: 1.5rem;
-  border-radius: 1.75rem;
-  background: linear-gradient(180deg, #faf4e9 0%, #f3eadb 100%);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  border-radius: calc(var(--radius-xl) + var(--spacing-xs));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, var(--bg-color)) 0%, color-mix(in srgb, var(--accent) 18%, var(--bg-color)) 100%);
 }
 
 .booking-summary {
   display: flex;
   flex-wrap: wrap;
   align-items: end;
-  gap: 1.25rem;
+  gap: var(--spacing-lg);
 }
 
 .summary-item {
