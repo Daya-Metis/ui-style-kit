@@ -58,6 +58,27 @@ type="color"
     [(ngModel)]="customVars['accent']"
     (ngModelChange)="themeService.setColor('accent', $event)"
   ></app-input>
+
+  <app-input
+    label="Elevated Surface"
+    type="color"
+    [(ngModel)]="customVars['bg-elevated']"
+    (ngModelChange)="themeService.setColor('bg-elevated', $event)"
+  ></app-input>
+
+  <app-input
+    label="Muted Text"
+    type="color"
+    [(ngModel)]="customVars['text-muted']"
+    (ngModelChange)="themeService.setColor('text-muted', $event)"
+  ></app-input>
+
+  <app-input
+    label="Border Color"
+    type="color"
+    [(ngModel)]="customVars['border-color']"
+    (ngModelChange)="themeService.setColor('border-color', $event)"
+  ></app-input>
 </section>
 
 
@@ -81,4 +102,3 @@ type="color"
     ></app-button>
   </div>  
 </section>
-

@@ -42,6 +42,12 @@ export class ThemeCustomizerComponent {
     const textColor = this.isDark(primary) ? '#ffffff' : '#1e1e1e';
     const bgColor = this.isDark(primary) ? '#1e1e1e' : '#ffffff';
     const bgContainer = this.isDark(primary) ? '#2c2c2c' : '#f5f5f5';
+    const bgElevated = this.isDark(primary) ? '#232323' : '#fcfcfb';
+    const textMuted = this.isDark(primary) ? '#b7bfca' : '#5d6773';
+    const borderColor = this.isDark(primary) ? '#343b44' : '#cfd5dc';
+    const borderStrong = this.isDark(primary) ? '#48515d' : '#b9c2cc';
+    const onPrimary = this.isDark(primary) ? '#08111c' : '#ffffff';
+    const onSecondary = '#ffffff';
   
     const themeVars = {
       'primary': primary,
@@ -49,7 +55,13 @@ export class ThemeCustomizerComponent {
       'accent': accent,
       'text-color': textColor,
       'bg-color': bgColor,
-      'bg-container': bgContainer
+      'bg-container': bgContainer,
+      'bg-elevated': bgElevated,
+      'text-muted': textMuted,
+      'border-color': borderColor,
+      'border-strong': borderStrong,
+      'on-primary': onPrimary,
+      'on-secondary': onSecondary
     };
     
     Object.entries(themeVars).forEach(([key, value]) => {
@@ -80,4 +92,3 @@ export class ThemeCustomizerComponent {
     );
   }
 }
-
