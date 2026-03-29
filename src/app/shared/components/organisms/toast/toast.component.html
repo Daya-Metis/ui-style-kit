@@ -8,7 +8,7 @@
       <button
         *ngIf="actionLabel"
         type="button"
-        class="toast-action"
+        class="text-link toast-action"
         (click)="handleAction()"
       >
         {{ actionLabel }}
@@ -16,7 +16,10 @@
     </div>
   </div>
 
-  <div class="toast-actions">
+  <div class="toast-state">
+    <app-icon [name]="stateIcon" [tone]="stateTone" size="xl"></app-icon>
+  </div>
+
     <app-icon-control
       *ngIf="dismissible"
       variant="close"
@@ -26,9 +29,4 @@
       class="toast-dismiss"
       (pressed)="handleDismiss()"
     ></app-icon-control>
-
-    <div class="toast-state">
-      <app-icon [name]="stateIcon" [tone]="stateTone" size="xl"></app-icon>
-    </div>
-  </div>
 </div>
