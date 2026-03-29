@@ -229,8 +229,15 @@
 
     <section id="tooltip-section">
       <h2>Tooltip</h2>
-      <!-- Placeholder, real tooltip needs structure -->
-      <app-button label="Hover me" tooltip="I'm a tooltip!"></app-button>
+      <div class="icon-row">
+        <app-tooltip text="Muted helper content that explains an action before commit.">
+          <app-icon-control variant="info" shape="rounded" label="Information"></app-icon-control>
+        </app-tooltip>
+
+        <app-tooltip text="Use tooltips for short supporting context, not primary information." position="bottom">
+          <app-button label="Hover me"></app-button>
+        </app-tooltip>
+      </div>
     </section>
   </main>
 </div>

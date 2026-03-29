@@ -11,6 +11,7 @@ import { RadioComponent } from '@atoms/radio/radio.component';
 import { ArrowComponent } from '@atoms/arrow/arrow.component';
 import { IconComponent } from '@atoms/icon/icon.component';
 import { IconControlComponent } from '@atoms/icon-control/icon-control.component';
+import { TooltipComponent } from '@atoms/tooltip/tooltip.component';
 import { ContentTableComponent } from '@organisms/content-table/content-table.component';
 import { ThemeService } from 'app/shared/utilities/services/theme.service';
 
@@ -21,6 +22,7 @@ import { ThemeService } from 'app/shared/utilities/services/theme.service';
     ArrowComponent,
     IconComponent,
     IconControlComponent,
+    TooltipComponent,
     ButtonComponent,
     CheckboxComponent,
     RadioComponent,

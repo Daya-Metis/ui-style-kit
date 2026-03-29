@@ -1,1 +1,6 @@
-<p>tooltip works!</p>
+<span class="tooltip" [class.bottom]="position === 'bottom'" tabindex="0">
+  <span class="tooltip-trigger">
+    <ng-content></ng-content>
+  </span>
+  <span class="tooltip-bubble" role="tooltip">{{ text }}</span>
+</span>
