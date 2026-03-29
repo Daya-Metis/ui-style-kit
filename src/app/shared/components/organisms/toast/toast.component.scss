@@ -39,8 +39,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.125rem;
-  height: 2.125rem;
+  width: clamp(3.25rem, 4vw, 4.5rem);
+  height: clamp(3.25rem, 4vw, 4.5rem);
   border-radius: 999px;
   background: color-mix(in srgb, var(--text-color) 4%, transparent);
   flex: 0 0 auto;
@@ -97,5 +97,9 @@
   gap: var(--spacing-sm);
   flex: 0 0 auto;
   margin-left: auto;
-  padding-top: 0;
+  min-height: clamp(3.25rem, 4vw, 4.5rem);
+}
+
+.toast-dismiss {
+  color: var(--text-muted);
 }

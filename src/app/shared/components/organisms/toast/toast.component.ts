@@ -2,11 +2,12 @@ import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '@atoms/icon/icon.component';
 import { IconControlComponent } from '@atoms/icon-control/icon-control.component';
+import {ButtonComponent} from '@atoms/button/button.component';
 
 @Component({
   selector: 'app-toast',
   standalone: true,
-  imports: [CommonModule, NgClass, NgIf, IconComponent, IconControlComponent],
+  imports: [CommonModule, NgClass, NgIf, IconComponent, IconControlComponent, ButtonComponent],
   templateUrl: './toast.component.html',
   styleUrl: './toast.component.scss'
 })

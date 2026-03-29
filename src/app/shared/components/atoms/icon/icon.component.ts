@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 export class IconComponent {
   @Input() name: 'check' | 'close' | 'error' | 'info' | 'warning' = 'info';
   @Input() tone: 'neutral' | 'primary' | 'success' | 'warning' | 'error' = 'neutral';
-  @Input() size: 'sm' | 'md' | 'lg' = 'md';
+  @Input() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
   get viewBox(): string {
     return this.name === 'warning' ? '0 0 20 18' : '0 0 20 20';

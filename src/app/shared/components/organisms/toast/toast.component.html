@@ -17,17 +17,18 @@
   </div>
 
   <div class="toast-actions">
-    <div class="toast-state">
-      <app-icon [name]="stateIcon" [tone]="stateTone" size="lg"></app-icon>
-    </div>
-
     <app-icon-control
       *ngIf="dismissible"
       variant="close"
       label="Dismiss toast"
-      shape="rounded"
-      size="xl"
+      shape="plain"
+      size="sm"
+      class="toast-dismiss"
       (pressed)="handleDismiss()"
     ></app-icon-control>
+
+    <div class="toast-state">
+      <app-icon [name]="stateIcon" [tone]="stateTone" size="xl"></app-icon>
+    </div>
   </div>
 </div>
