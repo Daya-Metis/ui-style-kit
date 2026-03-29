@@ -1,1 +1,114 @@
-<p>pages works!</p>
+<div class="page-layout example-page">
+  <aside class="toc-panel">
+    <div class="toc-sticky">
+      <app-content-table
+        [title]="'Page Sections'"
+        [sections]="sections"
+      />
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <section id="hero" class="example-hero">
+      <div class="hero-overlay"></div>
+      <div class="example-copy">
+        <span class="hero-tag">Example Page</span>
+        <h1>Northline House pairs cold-water mornings with warm cedar interiors.</h1>
+        <p>
+          A complete branded landing page built inside the kit using the same atoms, molecules, and organisms
+          shown elsewhere in the guide.
+        </p>
+        <div class="example-actions">
+          <app-button label="Reserve A Stay"></app-button>
+          <app-button label="View Rooms" type="secondary"></app-button>
+        </div>
+      </div>
+
+      <div class="hero-details">
+        <div class="detail-block">
+          <span>Season</span>
+          <strong>April to October</strong>
+        </div>
+        <div class="detail-block">
+          <span>Format</span>
+          <strong>Cabins, suites, and coastal houses</strong>
+        </div>
+        <div class="detail-block">
+          <span>Distance</span>
+          <strong>40 minutes from the harbor</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="stays" class="example-section">
+      <div class="section-intro">
+        <span class="section-tag">Stay Types</span>
+        <h2>Three ways to land softly.</h2>
+      </div>
+
+      <app-tabs
+        [tabs]="stayTabs"
+        [(activeTab)]="activeStayTab"
+        [variant]="'underline'"
+        [size]="'lg'"
+      >
+        <div tab-content class="stay-panel">
+          <div *ngIf="activeStayTab === 'cabins'" class="stay-layout">
+            <div class="stay-visual stay-visual-cabins"></div>
+            <div class="stay-copy">
+              <h3>Cedar cabins for quiet weekends.</h3>
+              <p>Compact rooms with wide decks, morning light, and direct access to the cold-plunge path.</p>
+            </div>
+          </div>
+
+          <div *ngIf="activeStayTab === 'suites'" class="stay-layout">
+            <div class="stay-visual stay-visual-suites"></div>
+            <div class="stay-copy">
+              <h3>Suites with longer-table energy.</h3>
+              <p>More floor area, deeper soaking tubs, and seating designed for reading, sketching, or dinner for two.</p>
+            </div>
+          </div>
+
+          <div *ngIf="activeStayTab === 'houses'" class="stay-layout">
+            <div class="stay-visual stay-visual-houses"></div>
+            <div class="stay-copy">
+              <h3>Cliff houses for small groups.</h3>
+              <p>Shared kitchens, weather-facing terraces, and enough privacy to make a long weekend feel expansive.</p>
+            </div>
+          </div>
+        </div>
+      </app-tabs>
+    </section>
+
+    <section id="rituals" class="example-section">
+      <div class="section-intro">
+        <span class="section-tag">Daily Rhythm</span>
+        <h2>Built around temperature, food, and horizon time.</h2>
+      </div>
+
+      <div class="ritual-grid">
+        <app-card image="/page-ritual-art.svg" title="Dawn Swim" text="Saltwater ladder access opens before breakfast, with towels waiting on return."></app-card>
+        <app-card image="/page-ritual-art.svg" title="Fire Kitchen" text="Shared evening table with smoke, citrus, and one changing market menu."></app-card>
+        <app-card image="/page-ritual-art.svg" title="Night Studio" text="Low light reading room, listening booth, and tea service after 21:00."></app-card>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-band">
+      <div>
+        <span class="section-tag">Booking</span>
+        <h2>Choose the format that matches your pace, then keep the rest simple.</h2>
+      </div>
+      <div class="booking-summary">
+        <div class="summary-item">
+          <span>From</span>
+          <strong>€240 / night</strong>
+        </div>
+        <div class="summary-item">
+          <span>Best for</span>
+          <strong>Two to six guests</strong>
+        </div>
+        <app-button label="Check Availability"></app-button>
+      </div>
+    </section>
+  </main>
+</div>

@@ -1,1 +1,109 @@
-<p>templates works!</p>
+<div class="page-layout template-page">
+  <aside class="toc-panel">
+    <div class="toc-sticky">
+      <app-content-table
+        [title]="'Template Index'"
+        [sections]="sections"
+      />
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <section id="hero" class="template-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Templates</span>
+        <h1>Reusable page skeletons for branded launches, operational surfaces, and editorial storytelling.</h1>
+        <p>
+          These templates are meant to show composition before components: one dominant idea per section,
+          clear spacing, and enough structure to start a real page quickly.
+        </p>
+        <div class="hero-actions">
+          <app-button label="Use As Starting Point"></app-button>
+          <app-button label="Compare Layouts" type="secondary"></app-button>
+        </div>
+      </div>
+
+      <div class="hero-poster" aria-hidden="true">
+        <div class="poster-sheet poster-sheet-primary">
+          <span class="poster-kicker">Launch</span>
+          <strong>Hero / Proof / Story / CTA</strong>
+        </div>
+        <div class="poster-sheet poster-sheet-secondary">
+          <span class="poster-kicker">Operate</span>
+          <strong>Nav / Workspace / Inspector</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketing" class="template-section">
+      <div class="section-heading">
+        <span class="section-label">Marketing Shell</span>
+        <h2>For product launches, campaigns, and event pages.</h2>
+        <p>Start with one strong visual promise, then support it with a single proof band and one deeper story section.</p>
+      </div>
+
+      <div class="template-showcase marketing-shell">
+        <div class="shell-visual shell-ocean"></div>
+        <div class="shell-copy">
+          <ul class="module-list">
+            <li *ngFor="let item of marketingModules">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="template-section">
+      <div class="section-heading">
+        <span class="section-label">Operations Shell</span>
+        <h2>For internal products, dashboards, and live status surfaces.</h2>
+        <p>Lead with the working surface itself. Dense information is fine if hierarchy is stable and the accent is controlled.</p>
+      </div>
+
+      <div class="template-showcase dashboard-shell">
+        <div class="dashboard-rail">
+          <span class="rail-title">Monitor</span>
+          <span class="rail-link active">Overview</span>
+          <span class="rail-link">Segments</span>
+          <span class="rail-link">Incidents</span>
+          <span class="rail-link">Exports</span>
+        </div>
+        <div class="dashboard-workspace">
+          <div class="workspace-metric">
+            <span class="metric-label">Throughput</span>
+            <strong>18.2k</strong>
+          </div>
+          <div class="workspace-chart"></div>
+          <div class="workspace-row">
+            <div class="workspace-list"></div>
+            <div class="workspace-panel"></div>
+          </div>
+        </div>
+        <div class="dashboard-notes">
+          <ul class="module-list">
+            <li *ngFor="let item of dashboardModules">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="editorial" class="template-section">
+      <div class="section-heading">
+        <span class="section-label">Editorial Shell</span>
+        <h2>For case studies, magazines, and narrative product explainers.</h2>
+        <p>Give the page room to breathe. The payoff comes from pacing, scale shifts, and very short copy blocks.</p>
+      </div>
+
+      <div class="editorial-grid">
+        <app-card image="/template-editorial-art.svg" title="Case Study" text="Big title, measured body, and one memorable visual anchor."></app-card>
+        <app-card image="/template-editorial-art.svg" title="Feature Story" text="Alternating image and text bands create a clean reading rhythm."></app-card>
+        <app-card image="/template-editorial-art.svg" title="Journal" text="Use quiet dividers, restrained metadata, and one final onward path."></app-card>
+      </div>
+
+      <div class="editorial-notes">
+        <ul class="module-list">
+          <li *ngFor="let item of editorialModules">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>

@@ -9,7 +9,7 @@
   ></app-button>
 
   <app-card *ngIf="!collapsed" class="toc-card" [contentClass]="'toc-content-style'">
-    <h4 class="toc-title">Table of Contents</h4>
+    <h4 class="toc-title">{{ title }}</h4>
     <ul class="toc-list">
       <li
         *ngFor="let section of sections"
@@ -22,4 +22,3 @@
     </ul>
   </app-card>
 </div>
-

@@ -1,0 +1,229 @@
+.template-page {
+  align-items: flex-start;
+}
+
+.template-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top left, rgba(255, 196, 88, 0.28), transparent 34%),
+    linear-gradient(135deg, #f8f4ea 0%, #eef4ff 48%, #fbfcfe 100%);
+  overflow: hidden;
+}
+
+.hero-copy h1,
+.section-heading h2 {
+  margin: 0;
+  max-width: 14ch;
+  line-height: 0.96;
+}
+
+.hero-copy p,
+.section-heading p {
+  max-width: 62ch;
+  color: color-mix(in srgb, var(--text-color) 72%, white);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.eyebrow,
+.section-label,
+.poster-kicker,
+.rail-title,
+.metric-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero-poster {
+  position: relative;
+  min-height: 24rem;
+}
+
+.poster-sheet {
+  position: absolute;
+  inset: auto;
+  width: min(100%, 20rem);
+  aspect-ratio: 4 / 5;
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 24px 60px rgba(16, 24, 40, 0.15);
+}
+
+.poster-sheet strong {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 0.95;
+}
+
+.poster-sheet-primary {
+  right: 0;
+  top: 0;
+  background: linear-gradient(160deg, #10233f 0%, #24476d 100%);
+  color: #f8fbff;
+  transform: rotate(3deg);
+}
+
+.poster-sheet-secondary {
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #fdf8ef 0%, #f3ead8 100%);
+  color: #132238;
+  transform: rotate(-7deg);
+}
+
+.template-section {
+  margin-top: 3rem;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.template-showcase {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 14%, white);
+  border-radius: 1.75rem;
+  background: #fcfcfb;
+}
+
+.marketing-shell {
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+}
+
+.shell-visual {
+  min-height: 22rem;
+  border-radius: 1.5rem;
+}
+
+.shell-ocean {
+  background:
+    linear-gradient(180deg, rgba(9, 30, 66, 0.18), rgba(9, 30, 66, 0.02)),
+    radial-gradient(circle at 25% 20%, rgba(255,255,255,0.8), transparent 18%),
+    linear-gradient(180deg, #6ea4d9 0%, #9dc1e5 45%, #f5eee1 45%, #eadfc9 100%);
+}
+
+.module-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.9rem;
+  line-height: 1.5;
+}
+
+.dashboard-shell {
+  grid-template-columns: 12rem minmax(0, 1fr) 18rem;
+  background: linear-gradient(180deg, #f9fbfc 0%, #f2f5f7 100%);
+}
+
+.dashboard-rail,
+.dashboard-notes {
+  border-radius: 1.25rem;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #e4ebef;
+}
+
+.rail-link {
+  display: block;
+  padding: 0.75rem 0.85rem;
+  margin-top: 0.35rem;
+  border-radius: 0.85rem;
+  color: #304255;
+}
+
+.rail-link.active {
+  background: #10233f;
+  color: white;
+}
+
+.dashboard-workspace {
+  display: grid;
+  gap: 1rem;
+}
+
+.workspace-metric,
+.workspace-chart,
+.workspace-list,
+.workspace-panel {
+  border-radius: 1.25rem;
+  background: white;
+  border: 1px solid #e4ebef;
+}
+
+.workspace-metric {
+  padding: 1.25rem;
+}
+
+.workspace-metric strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 2rem;
+}
+
+.workspace-chart {
+  min-height: 14rem;
+  background:
+    linear-gradient(180deg, rgba(16,35,63,0.05), rgba(16,35,63,0)),
+    linear-gradient(90deg, transparent 0 8%, rgba(40,96,164,0.12) 8% 12%, transparent 12% 24%, rgba(40,96,164,0.16) 24% 28%, transparent 28% 42%, rgba(40,96,164,0.2) 42% 46%, transparent 46% 64%, rgba(40,96,164,0.15) 64% 68%, transparent 68%);
+}
+
+.workspace-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.workspace-list,
+.workspace-panel {
+  min-height: 10rem;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.editorial-notes {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, #fffdf8 0%, #f7f1e7 100%);
+}
+
+@media (max-width: 960px) {
+  .template-hero,
+  .marketing-shell,
+  .dashboard-shell,
+  .editorial-grid,
+  .workspace-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-poster {
+    min-height: 20rem;
+  }
+
+  .poster-sheet {
+    width: 14rem;
+  }
+}
